@@ -33,7 +33,7 @@ Sets are equal when they have the same elements. This means order doesn't matter
 
 A set is a subset of another set when it fits inside of it. There is a symbol that looks like $\leq$ that means "is a subset of". For example $\{1,2\} \subseteq \{1,2,3\}$. It is also true that any set is a subset of itself, so $\{1,2\} \subseteq \{1,2\}$. In more precise terms $A \subseteq B$ if and only if every element of A is also an element of B.
 
-A common technique to prove that two sets are equal is to show that $A \subseteq B$ and $ B \subseteq A$. This means there is no element in either set that does not belong to the other and the sets are equal.
+A common technique to prove that two sets are equal is to show that $A \subseteq B$ and $B \subseteq A$. This means there is no element in either set that does not belong to the other and the sets are equal.
 
 ##Set Operations and Venn Diagrams
 Just like you can add numbers together to make a new number, you can combine sets and make a new set. Let's define some sets.
@@ -48,19 +48,19 @@ There is a visual representation of sets called a Venn Diagram. In a Venn Diagra
 ![](Pictures/01-Sets/Venn.PNG)
 
 ### Union
-An element is in the union of A and B if it is in A, B, or A and B. The notation for this operation is $A \cup B$ and it is pronounced "A union B". Here is the set that results from this union: $ A \cup B = \{1,2,3,4,5,7\}$
+An element is in the union of A and B if it is in A, B, or A and B. The notation for this operation is $A \cup B$ and it is pronounced "A union B". Here is the set that results from this union: $A \cup B = \{1,2,3,4,5,7\}$
 
 ![](Pictures/01-Sets/AUB.PNG)
 
 ### Intersection
-An element is in the intersection of A and B if it is in A and B. The notation for this operation is $ A \cap B$ and it is pronounced "A intersect B". Here is the set that results from this intersection: $A \cap B = \{3,5\}$
+An element is in the intersection of A and B if it is in A and B. The notation for this operation is $A \cap B$ and it is pronounced "A intersect B". Here is the set that results from this intersection: $A \cap B = \{3,5\}$
 
 ![](Pictures/01-Sets/AcapB.PNG)
 
 ### Complement
 An element is in the complement of A if it is not in A, but is in the sample space. The notation for the complement of A is $A^C$ and is pronounced "A complement" or "the complement of A". Here is the result of taking the complement of A: $A^C = \{2,4,6,8,9,10\}$. Note that in general $(A^C)^C = A$.
 
-![](Pictures/01-Sets/A^C.PNG)
+![](Pictures/01-Sets/AC.PNG)
 
 ### Set Difference
 The set difference of A and B elements that are in A but not in B. The notation is either $A \backslash B$ or $A - B$ and is pronounced "A minus B". Here is the result of this set difference: $A - B = \{7,1\}$. It is worth noting that $A-B=A \cap B^C$ because the elements are in A and they are not in B.
@@ -70,7 +70,7 @@ The set difference of A and B elements that are in A but not in B. The notation 
 ## Special Sets and Identities
 
 ### Sample Space and Empty Set
-The sample space is a type of special set because all other sets are subset of it. This leads to some commonsensical identities like $A \cup S = S$ and $A \cap S = A$. There is another special set called the empty set. This set has no elements. We could write it as $\{\}$ but the common way to write this is $\emptyset$. Some properties of the empty set are $A \cup \emptyset = A$ and $A \cap \emptyset = \emptyset$. It is also true that $\emptyset^C = S$ and $ S^C = \emptyset$.
+The sample space is a type of special set because all other sets are subset of it. This leads to some commonsensical identities like $A \cup S = S$ and $A \cap S = A$. There is another special set called the empty set. This set has no elements. We could write it as $\{\}$ but the common way to write this is $\emptyset$. Some properties of the empty set are $A \cup \emptyset = A$ and $A \cap \emptyset = \emptyset$. It is also true that $\emptyset^C = S$ and $S^C = \emptyset$.
 
 ### De Morgan's Laws
 De Morgan's laws are formulas for the complement of a union or intersection of sets.
@@ -95,7 +95,7 @@ You can draw a Venn diagram for three sets with three circles. It gets a little 
 If you mix together unions and intersections in an expression it isn't associative. Can you think of an example?
 $$A \cap (B \cup C) \not= (A \cap B) \cup C$$ 
 There are distributive formulas for situations like this. 
-$$ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
+$$A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
  A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$$ 
 Because of this it is said that intersection distributes over unions, and that unions distribute across intersections. It is easier to remember these distributive formulas by comparing them to the way multiplication distributes over addition. $a(b+c)=ab+ac$. Just pretend that the multiplication is an intersection and the addition is a union.
 
