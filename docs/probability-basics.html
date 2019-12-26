@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Probability Basics | An Exam P Study Guide</title>
+  <meta name="description" content="This is a study guide for exam P." />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Probability Basics | An Exam P Study Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a study guide for exam P." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Probability Basics | An Exam P Study Guide" />
+  
+  <meta name="twitter:description" content="This is a study guide for exam P." />
+  
+
+<meta name="author" content="Actuary Helper" />
+
+
+<meta name="date" content="2019-12-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="counting.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> An Introduction to Set Theory</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#defining-sets"><i class="fa fa-check"></i><b>1.1</b> Defining Sets</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#set-equality-and-subsets"><i class="fa fa-check"></i><b>1.2</b> Set Equality and Subsets</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#set-operations-and-venn-diagrams"><i class="fa fa-check"></i><b>1.3</b> Set Operations and Venn Diagrams</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#venn-diagram"><i class="fa fa-check"></i><b>1.3.1</b> Venn Diagram</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#union"><i class="fa fa-check"></i><b>1.3.2</b> Union</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#intersection"><i class="fa fa-check"></i><b>1.3.3</b> Intersection</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#complement"><i class="fa fa-check"></i><b>1.3.4</b> Complement</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#set-difference"><i class="fa fa-check"></i><b>1.3.5</b> Set Difference</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#special-sets-and-identities"><i class="fa fa-check"></i><b>1.4</b> Special Sets and Identities</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#sample-space-and-empty-set"><i class="fa fa-check"></i><b>1.4.1</b> Sample Space and Empty Set</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#de-morgans-laws"><i class="fa fa-check"></i><b>1.4.2</b> De Morgan’s Laws</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#or-more-sets"><i class="fa fa-check"></i><b>1.4.3</b> 3 or More Sets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="counting.html"><a href="counting.html"><i class="fa fa-check"></i><b>2</b> Counting</a><ul>
+<li class="chapter" data-level="2.1" data-path="counting.html"><a href="counting.html#size-of-a-set"><i class="fa fa-check"></i><b>2.1</b> Size of a set</a></li>
+<li class="chapter" data-level="2.2" data-path="counting.html"><a href="counting.html#principle-of-inclusion-exclusion"><i class="fa fa-check"></i><b>2.2</b> Principle of Inclusion-Exclusion</a></li>
+<li class="chapter" data-level="2.3" data-path="counting.html"><a href="counting.html#multiplication-principle"><i class="fa fa-check"></i><b>2.3</b> Multiplication Principle</a></li>
+<li class="chapter" data-level="2.4" data-path="counting.html"><a href="counting.html#permutations"><i class="fa fa-check"></i><b>2.4</b> Permutations</a></li>
+<li class="chapter" data-level="2.5" data-path="counting.html"><a href="counting.html#combinations"><i class="fa fa-check"></i><b>2.5</b> Combinations</a></li>
+<li class="chapter" data-level="2.6" data-path="counting.html"><a href="counting.html#variations"><i class="fa fa-check"></i><b>2.6</b> Variations</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>3</b> Probability Basics</a><ul>
+<li class="chapter" data-level="3.1" data-path="probability-basics.html"><a href="probability-basics.html#equally-likely-events"><i class="fa fa-check"></i><b>3.1</b> Equally Likely Events</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="probability-basics.html"><a href="probability-basics.html#real-world-data"><i class="fa fa-check"></i><b>3.1.1</b> Real World Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="probability-basics.html"><a href="probability-basics.html#terminology"><i class="fa fa-check"></i><b>3.2</b> Terminology</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="probability-basics.html"><a href="probability-basics.html#sample-spaces-and-events"><i class="fa fa-check"></i><b>3.2.1</b> Sample Spaces and Events</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="probability-basics.html"><a href="probability-basics.html#probability-functions"><i class="fa fa-check"></i><b>3.3</b> Probability Functions</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="probability-basics.html"><a href="probability-basics.html#probability-axioms"><i class="fa fa-check"></i><b>3.3.1</b> Probability Axioms</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="probability-basics.html"><a href="probability-basics.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional Probability</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="probability-basics.html"><a href="probability-basics.html#bayes-theorem"><i class="fa fa-check"></i><b>3.4.1</b> Bayes theorem</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Exam P Study Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probability-basics" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Probability Basics</h1>
+<div id="equally-likely-events" class="section level2">
+<h2><span class="header-section-number">3.1</span> Equally Likely Events</h2>
+If we flip a coin it should land on heads half the time and tails half the time. It is said that heads and tails have the same probability because the percentage of both heads and tails tend towards the number <span class="math inline">\(.5\)</span> as the number of coin flips in an experiment increases. Here are the results of a simulation.
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Number of Trials
+</th>
+<th style="text-align:left;">
+Percent Heads
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+60%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1,000
+</td>
+<td style="text-align:left;">
+48.1%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100,000
+</td>
+<td style="text-align:left;">
+50.005%
+</td>
+</tr>
+</tbody>
+</table>
+<p>When we make a “random selection” it means that every selection has equal probability. For example if I randomly select a card from a deck of <span class="math inline">\(52\)</span> cards the probability of drawing any given card is <span class="math inline">\(\frac{1}{52}\)</span>.</p>
+<p>When every possible outcome has equal probability the formula for the probability of some subset of the outcomes is: <span class="math display">\[\frac{Number \ of \ Possible \ Outcomes}{Number of Total Possible Outcomes}\]</span> We can make a more complicated example by asking what the probability of drawing 4 aces when we randomly select 5 cards from a deck. The number of ways to draw 4 aces is <span class="math inline">\({4 \choose 4} = 1\)</span> because there are 4 aces and we must select all of them. There are 48 cards to select that are not aces which leads to <span class="math inline">\({48 \choose 1} = 48\)</span> outcomes.</p>
+<p>The number of ways to draw 4 aces is: <span class="math display">\[{4 \choose 4}{48 \choose 1} = 48\]</span></p>
+<p>The number of ways to draw 5 cards is: <span class="math display">\[{52 \choose 5}\]</span></p>
+<p>The answer is then: <span class="math display">\[\frac{{4 \choose 4}{48 \choose 1}}{{52 \choose 5}} = \frac{48}{2598960} = \frac{1}{54145}\]</span></p>
+<div id="real-world-data" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Real World Data</h3>
+We can make estimates about the overall population of pets using the results of a survey about pets. To do this, we pretend that the pets in the survey represent the entire population of pets. The probability of a cat being fluffy is the probability of randomly selecting a fluffy cat and is estimated as: <span class="math display">\[\frac{Number \ of \ Fluffy \ Cats}{Total \ Number \ of \ Cats}=\frac{21}{39}\]</span>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Fluffy
+</th>
+<th style="text-align:left;">
+Not Fluffy
+</th>
+<th style="text-align:left;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Cats
+</td>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;font-weight: bold;">
+39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Dogs
+</td>
+<td style="text-align:left;">
+35
+</td>
+<td style="text-align:left;">
+26
+</td>
+<td style="text-align:left;font-weight: bold;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;font-weight: bold;">
+Total
+</td>
+<td style="text-align:left;font-weight: bold;">
+56
+</td>
+<td style="text-align:left;font-weight: bold;">
+44
+</td>
+<td style="text-align:left;font-weight: bold;font-weight: bold;">
+100
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="terminology" class="section level2">
+<h2><span class="header-section-number">3.2</span> Terminology</h2>
+<div id="sample-spaces-and-events" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Sample Spaces and Events</h3>
+<p>In probability we talk about <strong>experiments</strong>, <strong>sample spaces</strong>, and <strong>events</strong>.</p>
+<p>When we flip a coin or roll a die that is an experiment.</p>
+<p>The set of all possible outcomes of an experiment is the sample space. When we flip a coin once the sample space is <span class="math inline">\(\{H,T\}\)</span>. When we flip a coin twice the sample space is <span class="math inline">\(\{HH,HT,TH,TT\}\)</span>. If we roll a die twice the sample space has 36 possible outcomes. We can represent rolling a <span class="math inline">\(1\)</span> and then a <span class="math inline">\(6\)</span> as <span class="math inline">\((1,6)\)</span>. Instead of writing all 36 elements of the sample space we can use set builder notation: <span class="math display">\[\{(a,b)|a,b \in \{1,2,3,4,5,6\}\}\]</span></p>
+<p>Events represent a set of possible outcomes from an experiment. When we flip two coins there is an event for flipping two heads, <span class="math inline">\(\{HH\}\)</span>. There is also an event for not flipping two heads <span class="math inline">\(\{HT,TH,TT\}\)</span>. An event is a subset of the sample space. It may represent a single outcome of our experiment, or it may represent several of the possible outcomes: <span class="math display">\[E \subseteq S\]</span></p>
+<p>Now we can rewrite our formula for the probability when all outcomes of an experiment are equally likely using our notation for events. <span class="math display">\[\frac{Number \ of \ Possible \ Outcomes}{Number of Total Possible Outcomes} = \frac{n(E)}{n(S)}\]</span></p>
+</div>
+</div>
+<div id="probability-functions" class="section level2">
+<h2><span class="header-section-number">3.3</span> Probability Functions</h2>
+<p>There is a function called a probability function, denoted <span class="math inline">\(P\)</span>, that calculates the probability of an event. When we flip a coin twice the probability of getting a head and a tail is: <span class="math display">\[P(\{HT, TH\})=.5\]</span> <span class="math inline">\(P\)</span> is a function that takes an event as input and gives a number between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> as output. In notation: <span class="math display">\[P:E \mapsto [0,1]\]</span> The output is between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> because an event can’t happen less than <span class="math inline">\(0\%\)</span> of the time or more than <span class="math inline">\(100\%\)</span> of the time.</p>
+<p>If we are being more mathematically rigorous, this rule about probabilities being between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> is derived from some more basic assumptions and not intuition about the percentage of times something occurs. Let’s talk about these basic assumptions.</p>
+<div id="probability-axioms" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Probability Axioms</h3>
+<p>There are three fundamental assumptions (called axioms) about probability functions from which our other laws are derived.</p>
+<p><strong>First Axiom</strong> - For a sample space <span class="math inline">\(S\)</span>, event <span class="math inline">\(E\)</span>, and probability function <span class="math inline">\(P\)</span>: <span class="math display">\[P(E) \geq 0\]</span> <strong>Second Axiom</strong> - For a sample space <span class="math inline">\(S\)</span>: <span class="math display">\[P(S)=1\]</span> <strong>Third Axiom</strong> - If <span class="math inline">\(E1, E2, ...En\)</span> are <strong>mutually exclusive</strong> events: <span class="math display">\[P(\bigcup\limits_{i=1}^{\infty} E_{i})=P(E_1 \cup E_2 \cup...\cup En \cup...) = P(E1)+P(E2)+...+P(En)+...\]</span> For <strong>two mutually exclusive</strong> events events the third axiom is: <span class="math display">\[P(E_1 \cup E_2) = P(E_1)+P(E_2)\]</span> If we flip a coin, heads and tails are mutually exclusive events. <span class="math display">\[P(\{H\} \cup \{T\}) = P(\{H\})+P(\{T\}) = .5 + .5 = 1\]</span> We know that <span class="math inline">\(P(\{H\}), P(\{T\})=.5\)</span> from our formula for equally likely events at the beginning of the chapter. Note that <span class="math inline">\(S = \{H\} \cup \{T\}\)</span> so this example also illustrates that <span class="math inline">\(P(S)=1\)</span>.</p>
+<p>From our three axioms we can derive more properties of probabilities. <span class="math display">\[P(A)+P(A^C) = P(A \cup A^C) = \ P(S) = 1 \ using \ Axioms \ 2 \ and \ 3\]</span> Since <span class="math inline">\(P(A^C)+P(A) = 1 \implies P(A^C) = 1-P(A)\)</span></p>
+<p>We showed how to derive the formula for the probability of a complement of a set. There are several formulas that are useful for this exam that can be derived from these axioms. <span class="math display">\[Complements: \ P(A^C) = 1 - P(A) \\
+Upper \ Bound:P(A) \leq 1 \\
+General \ Probability \ of \ 2 \ Unions: P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
+3 \ Unions: P(A \cup B \cup C) =  \\ P(A) + P(B) + P(C) - P(A \cap B)-P(B \cap C)-P(C \cap A) + P(A \cap B \cap C)\]</span></p>
+<p>Notice that these formulas are the same as our formulas for the size of the set if we swap out <span class="math inline">\(P\)</span> for <span class="math inline">\(n\)</span> and <span class="math inline">\(1\)</span> for <span class="math inline">\(n(S)\)</span>.</p>
+</div>
+</div>
+<div id="conditional-probability" class="section level2">
+<h2><span class="header-section-number">3.4</span> Conditional Probability</h2>
+In the following example we make estimates about the overall population of pets using the results of a survey. To do this, we pretend that the pets in the survey represent the entire population of pets. The probability of a cat being fluffy is the probability of randomly selecting a fluffy cat and is estimated as <span class="math display">\[\frac{Number \ of \ Fluffy \ Cats}{Total \ Number \ of \ Cats}=\frac{21}{39}\]</span>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Fluffy
+</th>
+<th style="text-align:left;">
+Not Fluffy
+</th>
+<th style="text-align:left;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Cats
+</td>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;font-weight: bold;">
+39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Dogs
+</td>
+<td style="text-align:left;">
+35
+</td>
+<td style="text-align:left;">
+26
+</td>
+<td style="text-align:left;font-weight: bold;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;font-weight: bold;">
+Total
+</td>
+<td style="text-align:left;font-weight: bold;">
+56
+</td>
+<td style="text-align:left;font-weight: bold;">
+44
+</td>
+<td style="text-align:left;font-weight: bold;font-weight: bold;">
+100
+</td>
+</tr>
+</tbody>
+</table>
+<div id="bayes-theorem" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Bayes theorem</h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="counting.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-probability.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

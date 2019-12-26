@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.15)  22 DEC 2019 15:12
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.15)  25 DEC 2019 23:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,79 +671,45 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count285
 )
-(c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/col
-or.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-
-(c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg
-/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: xetex.def on input line 147.
-
-(c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def
-/xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
-))
-(c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fan
-cyvrb.sty
-Package: fancyvrb 2019/11/09
-Style option: `fancyvrb' v3.4 <2019/11/09> (tvz)
-\FV@CodeLineNo=\count286
-\FV@InFile=\read2
-\FV@TabBox=\box49
-\c@FancyVerbLine=\count287
-\FV@StepNumber=\count288
-\FV@OutFile=\write3
-)
-(c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/frame
-d.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip55
-\fb@frw=\dimen151
-\fb@frh=\dimen152
-\FrameRule=\dimen153
-\FrameSep=\dimen154
-)
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longta
 ble.sty
 Package: longtable 2019/02/06 v4.12 Multi-page Table package (DPC)
-\LTleft=\skip56
-\LTright=\skip57
-\LTpre=\skip58
-\LTpost=\skip59
-\LTchunksize=\count289
-\LTcapwidth=\dimen155
-\LT@head=\box50
-\LT@firsthead=\box51
-\LT@foot=\box52
-\LT@lastfoot=\box53
-\LT@cols=\count290
-\LT@rows=\count291
-\c@LT@tables=\count292
-\c@LT@chunks=\count293
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count286
+\LTcapwidth=\dimen151
+\LT@head=\box49
+\LT@firsthead=\box50
+\LT@foot=\box51
+\LT@lastfoot=\box52
+\LT@cols=\count287
+\LT@rows=\count288
+\c@LT@tables=\count289
+\c@LT@chunks=\count290
 \LT@p@ftn=\toks22
 )
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/boo
 ktabs.sty
 Package: booktabs 2019/10/08 v1.6180339 publication quality tables
-\heavyrulewidth=\dimen156
-\lightrulewidth=\dimen157
-\cmidrulewidth=\dimen158
-\belowrulesep=\dimen159
-\belowbottomsep=\dimen160
-\aboverulesep=\dimen161
-\abovetopsep=\dimen162
-\cmidrulesep=\dimen163
-\cmidrulekern=\dimen164
-\defaultaddspace=\dimen165
-\@cmidla=\count294
-\@cmidlb=\count295
-\@aboverulesep=\dimen166
-\@belowrulesep=\dimen167
-\@thisruleclass=\count296
-\@lastruleclass=\count297
-\@thisrulewidth=\dimen168
+\heavyrulewidth=\dimen152
+\lightrulewidth=\dimen153
+\cmidrulewidth=\dimen154
+\belowrulesep=\dimen155
+\belowbottomsep=\dimen156
+\aboverulesep=\dimen157
+\abovetopsep=\dimen158
+\cmidrulesep=\dimen159
+\cmidrulekern=\dimen160
+\defaultaddspace=\dimen161
+\@cmidla=\count291
+\@cmidlb=\count292
+\@aboverulesep=\dimen162
+\@belowrulesep=\dimen163
+\@thisruleclass=\count293
+\@lastruleclass=\count294
+\@thisrulewidth=\dimen164
 )
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/gra
 phicx.sty
@@ -762,9 +728,13 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
-)
-\Gin@req@height=\dimen169
-\Gin@req@width=\dimen170
+
+(c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def
+/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
 )
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grff
 ile.sty
@@ -781,42 +751,42 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headfont=\toks25
 \thm@notefont=\toks26
 \thm@headpunct=\toks27
-\thm@preskip=\skip60
-\thm@postskip=\skip61
-\thm@headsep=\skip62
+\thm@preskip=\skip59
+\thm@postskip=\skip60
+\thm@headsep=\skip61
 \dth@everypar=\toks28
 ) (./bookdown-demo.aux)
 \openout1 = `bookdown-demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
+4.
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.
 fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 124.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+\AtBeginShipoutBox=\box53
+Package hyperref Info: Link coloring OFF on input line 84.
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nam
 eref.sty
@@ -830,56 +800,56 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count298
+\c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 124.
-LaTeX Info: Redefining \pageref on input line 124.
-LaTeX Info: Redefining \nameref on input line 124.
+LaTeX Info: Redefining \ref on input line 84.
+LaTeX Info: Redefining \pageref on input line 84.
+LaTeX Info: Redefining \nameref on input line 84.
 (./bookdown-demo.out) (./bookdown-demo.out)
-\@outlinefile=\write4
-\openout4 = `bookdown-demo.out'.
+\@outlinefile=\write3
+\openout3 = `bookdown-demo.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-26.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
+6.
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-26.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
+6.
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-126.
+86.
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.f
 d
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-126.
+86.
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.f
 d
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 126.
+(Font)              <12> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 126.
+(Font)              <8> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 126.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126
-.
+(Font)              <6> on input line 86.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
+
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/ums
 a.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
+
 
 (c:/Users/Mat Caseres/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/ums
 b.fd
@@ -897,8 +867,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
 )
-\tf@toc=\write5
-\openout5 = `bookdown-demo.toc'.
+\tf@toc=\write4
+\openout4 = `bookdown-demo.toc'.
 
 [3] [4
 
@@ -927,37 +897,71 @@ File: Pictures/01-Sets/Venn4.PNG Graphic file (type bmp)
 <Pictures/01-Sets/Venn4.PNG>
 [9] [10]
 Chapter 2.
-
-LaTeX Warning: Reference `methods' on page 11 undefined on input line 327.
-
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 334.
-File: bookdown-demo_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
-<use bookdown-demo_files/figure-latex/nice-fig-1.pdf>
-(./bookdown-demo.bbl [11
-
-] [12])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 403.
-[13
+[11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 403.
+File: Pictures/02-Counting/Tree.PNG Graphic file (type bmp)
+<Pictures/02-Counting/Tree.PNG>
+[12]
+File: Pictures/02-Counting/permute3large.PNG Graphic file (type bmp)
+<Pictures/02-Counting/permute3large.PNG>
+[13]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 406.
+
+File: Pictures/02-Counting/P(3,2)vsC(3,2).PNG Graphic file (type bmp)
+<Pictures/02-Counting/P(3,2)vsC(3,2).PNG>
+[14] [15] [16
+
+]
+Chapter 3.
+[17] [18] [19]
+Overfull \hbox (616.94963pt too wide) detected at line 615
+\OML/lmm/m/it/10 Complements \OT1/lmr/m/n/10 :  \OML/lmm/m/it/10 P\OT1/lmr/m/n/
+10 (\OML/lmm/m/it/10 A[]\OT1/lmr/m/n/10 ) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/i
+t/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 A\OT1/lmr/m/n/10 )[] \OML/lmm/m/it/10 U
+pper Bound \OT1/lmr/m/n/10 : \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/1
+0 A\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^T \OT1/lmr/m/n/10 1[] \OML/lmm/m/it/10 
+General Probability of \OT1/lmr/m/n/10 2 \OML/lmm/m/it/10 Unions \OT1/lmr/m/n/1
+0 : \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 A \OMS/lmsy/m/n/10 [ \O
+ML/lmm/m/it/10 B\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm
+/m/it/10 A\OT1/lmr/m/n/10 ) + \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/
+10 B\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\
+OML/lmm/m/it/10 A \OMS/lmsy/m/n/10 \ \OML/lmm/m/it/10 B\OT1/lmr/m/n/10 )[] 3 \O
+ML/lmm/m/it/10 Unions \OT1/lmr/m/n/10 : \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML
+/lmm/m/it/10 A \OMS/lmsy/m/n/10 [ \OML/lmm/m/it/10 B \OMS/lmsy/m/n/10 [ \OML/lm
+m/m/it/10 C\OT1/lmr/m/n/10 ) = [] \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m
+/it/10 A\OT1/lmr/m/n/10 ) + \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10
+ B\OT1/lmr/m/n/10 ) + \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 C\OT1
+/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/
+m/it/10 A \OMS/lmsy/m/n/10 \ \OML/lmm/m/it/10 B\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/
+10 ^^@ \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 B \OMS/lmsy/m/n/10 \
+ \OML/lmm/m/it/10 C\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P\OT
+1/lmr/m/n/10 (\OML/lmm/m/it/10 C \OMS/lmsy/m/n/10 \ \OML/lmm/m/it/10 A\OT1/lmr/
+m/n/10 ) + \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 A \OMS/lmsy/m/n/
+10 \ \OML/lmm/m/it/10 B \OMS/lmsy/m/n/10 \ \OML/lmm/m/it/10 C\OT1/lmr/m/n/10 )
+ []
+
+[20]
+No file bookdown-demo.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 663.
+[21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 663.
 (./bookdown-demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 403.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 403.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 663.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 663.
 Package rerunfilecheck Info: File `bookdown-demo.out' has not changed.
-(rerunfilecheck)             Checksum: D5399C9F4B45C17D87A798BB77913F2A;1032.
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 15785B16F98BB3143916EFC20DAD4645;2621.
  ) 
 Here is how much of TeX's memory you used:
- 23654 strings out of 494458
- 446870 string characters out of 6171631
- 541847 words of memory out of 5000000
- 27742 multiletter control sequences out of 15000+600000
- 557109 words of font info for 71 fonts, out of 8000000 for 9000
+ 23156 strings out of 494458
+ 439264 string characters out of 6171631
+ 530330 words of memory out of 5000000
+ 27260 multiletter control sequences out of 15000+600000
+ 557093 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 52i,8n,45p,810b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,6n,45p,810b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bookdown-demo.pdf (13 pages).
+Output written on bookdown-demo.pdf (21 pages).

@@ -10,6 +10,7 @@ biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
 description: "This is a study guide for exam P."
+always_allow_html: TRUE
 ---
 
 # An Introduction to Set Theory

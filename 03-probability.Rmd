@@ -1,0 +1,101 @@
+#Probability Basics
+
+##Equally Likely Events
+If we flip a coin it should land on heads half the time and tails half the time. It is said that heads and tails have the same probability because the percentage of both heads and tails tend towards the number $.5$ as the number of coin flips in an experiment increases. Here are the results of a simulation.
+```{r, results = "asis", echo = FALSE}
+library(knitr)
+library(kableExtra)
+library(magrittr)
+outcomes <- data.frame(trials = c("10", "1,000", "100,000"), percent_heads = c("60%","48.1%","50.005%"))
+outcomes %>% kable(col.names = c("Number of Trials", "Percent Heads")) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE)
+```
+
+When we make a "random selection" it means that every selection has equal probability. For example if I randomly select a card from a deck of $52$ cards the probability of drawing any given card is $\frac{1}{52}$.
+
+When every possible outcome has equal probability the formula for the probability of some subset of the outcomes is:
+$$\frac{Number \ of \ Possible \ Outcomes}{Number of Total Possible Outcomes}$$
+We can make a more complicated example by asking what the probability of drawing 4 aces when we randomly select 5 cards from a deck. The number of ways to draw 4 aces is ${4 \choose 4} = 1$ because there are 4 aces and we must select all of them. There are 48 cards to select that are not aces which leads to ${48 \choose 1} = 48$ outcomes. 
+
+The number of ways to draw 4 aces is:
+$${4 \choose 4}{48 \choose 1} = 48$$
+
+The number of ways to draw 5 cards is:
+$${52 \choose 5}$$
+
+The answer is then:
+$$\frac{{4 \choose 4}{48 \choose 1}}{{52 \choose 5}} = \frac{48}{2598960} = \frac{1}{54145}$$
+
+###Real World Data
+We can make estimates about the overall population of pets using the results of a survey about pets. To do this, we pretend that the pets in the survey represent the entire population of pets. The probability of a cat being fluffy is the probability of randomly selecting a fluffy cat and is estimated as:
+$$\frac{Number \ of \ Fluffy \ Cats}{Total \ Number \ of \ Cats}=\frac{21}{39}$$
+```{r, results = "asis", echo = FALSE}
+outcomes <- data.frame(pets = c("21", "35", "56"), not_pets = c("18","26","44"), total = c("39", "61", "100"))
+row.names(outcomes) <- c("Cats", "Dogs", "Total")
+outcomes %>% kable(col.names = c("Fluffy", "Not Fluffy", "Total"),
+                   row.names = TRUE) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% column_spec(1, bold=TRUE, border_right=TRUE) %>% column_spec(4, bold=TRUE) %>% row_spec(3, bold = TRUE)
+```
+
+##Terminology
+
+###Sample Spaces and Events
+
+In probability we talk about **experiments**, **sample spaces**, and **events**. 
+
+When we flip a coin or roll a die that is an experiment. 
+
+The set of all possible outcomes of an experiment is the sample space. When we flip a coin once the sample space is $\{H,T\}$. When we flip a coin twice the sample space is $\{HH,HT,TH,TT\}$. If we roll a die twice the sample space has 36 possible outcomes. We can represent rolling a $1$ and then a $6$ as $(1,6)$. Instead of writing all 36 elements of the sample space we can use set builder notation:
+$$\{(a,b)|a,b \in \{1,2,3,4,5,6\}\}$$
+
+Events represent a set of possible outcomes from an experiment. When we flip two coins there is an event for flipping two heads, $\{HH\}$. There is also an event for not flipping two heads $\{HT,TH,TT\}$. An event is a subset of the sample space. It may represent a single outcome of our experiment, or it may represent several of the possible outcomes:
+$$E \subseteq S$$
+
+Now we can rewrite our formula for the probability when all outcomes of an experiment are equally likely using our notation for events.
+$$\frac{Number \ of \ Possible \ Outcomes}{Number of Total Possible Outcomes} = \frac{n(E)}{n(S)}$$
+
+##Probability Functions
+
+There is a function called a probability function, denoted $P$, that calculates the probability of an event. When we flip a coin twice the probability of getting a head and a tail is:
+$$P(\{HT, TH\})=.5$$
+$P$ is a function that takes an event as input and gives a number between $0$ and $1$ as output. In notation:
+$$P:E \mapsto [0,1]$$
+The output is between $0$ and $1$ because an event can't happen less than $0\%$ of the time or more than $100\%$ of the time.
+
+If we are being more mathematically rigorous, this rule about probabilities being between $0$ and $1$ is derived from some more basic assumptions and not intuition about the percentage of times something occurs. Let's talk about these basic assumptions.
+
+###Probability Axioms
+There are three fundamental assumptions (called axioms) about probability functions from which our other laws are derived.
+
+**First Axiom** - For a sample space $S$, event $E$, and probability function $P$:
+$$P(E) \geq 0$$
+**Second Axiom** - For a sample space $S$:
+$$P(S)=1$$
+**Third Axiom** - If $E1, E2, ...En$ are **mutually exclusive** events:
+$$P(\bigcup\limits_{i=1}^{\infty} E_{i})=P(E_1 \cup E_2 \cup...\cup En \cup...) = P(E1)+P(E2)+...+P(En)+...$$
+For **two mutually exclusive** events events the third axiom is: 
+$$P(E_1 \cup E_2) = P(E_1)+P(E_2)$$
+If we flip a coin, heads and tails are mutually exclusive events. 
+$$P(\{H\} \cup \{T\}) = P(\{H\})+P(\{T\}) = .5 + .5 = 1$$ 
+We know that $P(\{H\}), P(\{T\})=.5$ from our formula for equally likely events at the beginning of the chapter. Note that $S = \{H\} \cup \{T\}$ so this example also illustrates that $P(S)=1$.
+
+From our three axioms we can derive more properties of probabilities.
+$$P(A)+P(A^C) = P(A \cup A^C) = \ P(S) = 1 \ using \ Axioms \ 2 \ and \ 3$$
+Since $P(A^C)+P(A) = 1 \implies P(A^C) = 1-P(A)$
+
+We showed how to derive the formula for the probability of a complement of a set. There are several formulas that are useful for this exam that can be derived from these axioms.
+$$Complements: \ P(A^C) = 1 - P(A) \\
+Upper \ Bound:P(A) \leq 1 \\
+General \ Probability \ of \ 2 \ Unions: P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
+3 \ Unions: P(A \cup B \cup C) =  \\ P(A) + P(B) + P(C) - P(A \cap B)-P(B \cap C)-P(C \cap A) + P(A \cap B \cap C)$$
+
+Notice that these formulas are the same as our formulas for the size of the set if we swap out $P$ for $n$ and $1$ for $n(S)$.
+
+##Conditional Probability
+In the following example we make estimates about the overall population of pets using the results of a survey. To do this, we pretend that the pets in the survey represent the entire population of pets. The probability of a cat being fluffy is the probability of randomly selecting a fluffy cat and is estimated as $$\frac{Number \ of \ Fluffy \ Cats}{Total \ Number \ of \ Cats}=\frac{21}{39}$$
+```{r, results = "asis", echo = FALSE}
+outcomes <- data.frame(pets = c("21", "35", "56"), not_pets = c("18","26","44"), total = c("39", "61", "100"))
+row.names(outcomes) <- c("Cats", "Dogs", "Total")
+outcomes %>% kable(col.names = c("Fluffy", "Not Fluffy", "Total"),
+                   row.names = TRUE) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% column_spec(1, bold=TRUE, border_right=TRUE) %>% column_spec(4, bold=TRUE) %>% row_spec(3, bold = TRUE)
+```
+
+###Bayes theorem
