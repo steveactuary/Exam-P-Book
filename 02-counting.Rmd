@@ -1,6 +1,6 @@
 # Counting
 
-##Size of a set
+## Size of a set
 The set $A = \{5,6\}$ has two elements. There is a notation to say the size of a set:
 $$n(A) = 2$$ 
 $n$ is a function that takes in a set and outputs the number of elements in it: 
@@ -8,7 +8,7 @@ $$n: Sets \to Whole \ Numbers$$
 Let the sample space be $S = \{1,2,3,4,5,6\}$. Since $A=\{5,6\}$, $A^C= \{1,2,3,4\}$ and $n(A^C)=4$. There is a formula we can use for the size of the complement: $$n(A^C) = n(S) - n(A)=6-2=4$$ 
 This is saying the size of the complement of a set is the size of the sample set minus the size of the set. I think this is pretty intuitive.
 
-##Principle of Inclusion-Exclusion
+## Principle of Inclusion-Exclusion
 We define sets $A$ and $B$: 
 $$A = \{3,4,5\} \quad \quad B = \{4,5,6\}$$ 
 We can see that $A \cup B = \{3,4,5,6\}$ and $n(A \cup B) = 4$. 
@@ -26,7 +26,7 @@ There is also a formula for the size of the union of three sets.
 $$n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B)-n(B \cap C)-n(C \cap A) + n(A \cap B \cap C)$$
 Consider how many times elements from each of the sections of a venn diagram with three sets are counted using the above formula. You should conclude that each element in $A \cup B \cup C$ is counted exactly once.
 
-##Multiplication Principle
+## Multiplication Principle
 I have a red shirt and a blue shirt. I have a green hat, a pink hat, and a black hat. How many different shirt/hat combinations can I wear?
 
 ![](Pictures/02-Counting/Tree.PNG)
@@ -36,7 +36,7 @@ The above diagram is an example of a **tree** diagram. The leaves (arrows with n
 If I have $4$ pairs of pants to choose from then there will be $2 \times 3 \times 4$ shirt/hat/pant combinations. In general if you are making independent selections with $a_1,a_2,...,a_n$ options, then the number of ways to make these selections is:
 $$a_1 \times a_2 \times ... \times a_n=\displaystyle\prod_{k=1}^{n} a_k$$
 
-##Permutations
+## Permutations
 Permutations are all about rearranging things into ordered outcomes. For example, how many ways can we order the numbers in the set $\{1,2,3\}$? Let's draw a tree diagram to figure this out.
 
 ![](Pictures/02-Counting/permute3large.PNG)
@@ -49,7 +49,7 @@ Let's consider something more general. In a $10$ person race how many possible o
 $$n \times (n-1) \times ... \times (n-k+1) = \frac{n!}{(n-k)!}$$
 The situation for the top $k$ racers in an $n$ person race has it's own notation, $P(n,k)$. $P(n,k)$ is pronounced "$n$ permute $k$".
 
-##Combinations
+## Combinations
 In permutations we consider how many possible orderings a subset of a certain size can have. What if we instead asked how many possible subsets there are of a certain size? For example, how many different ways can I pick $2$ people from a group of $3$ people? These problems are called combinations and the number of $k$ element subsets of an $n$ element set is $C(n,k)$. An different notation that is more common is $n \choose k$ and this is pronounced "n choose k". There is a relationship between permutations and combinations that we illustrate below.
 
 ![](Pictures/02-Counting/P(3,2)vsC(3,2).PNG)
@@ -58,7 +58,7 @@ For every set counted in $C(3,2)$ there are two ordered pairs in $P(3,2)$. Order
 
 $C(n,k) = \frac{P(n,k)}{k!} = \frac{n!}{k!(n-k)!}$
 
-##Variations
+## Variations
 Often a problem will involve using the multiplication principle with permutations and combinations. Consider the following:
 
 There is a set of $9$ distinct pigs. Three go to the market, three go to Arby's, and three go home. How many ways can this happen?
