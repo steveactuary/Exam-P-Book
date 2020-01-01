@@ -24,7 +24,7 @@
 <meta name="author" content="Actuary Helper" />
 
 
-<meta name="date" content="2019-12-29" />
+<meta name="date" content="2019-12-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -108,12 +108,18 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="probability-basics.html"><a href="probability-basics.html#probability-functions"><i class="fa fa-check"></i><b>3.3</b> Probability Functions</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="probability-basics.html"><a href="probability-basics.html#probability-axioms"><i class="fa fa-check"></i><b>3.3.1</b> Probability Axioms</a></li>
+<li class="chapter" data-level="3.3.1" data-path="probability-basics.html"><a href="probability-basics.html#axiomsprob"><i class="fa fa-check"></i><b>3.3.1</b> Probability Axioms</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="probability-basics.html"><a href="probability-basics.html#conditional-probability"><i class="fa fa-check"></i><b>3.4</b> Conditional Probability</a>
+<li class="chapter" data-level="3.4" data-path="probability-basics.html"><a href="probability-basics.html#conditional-probability-and-independence"><i class="fa fa-check"></i><b>3.4</b> Conditional Probability and Independence</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="probability-basics.html"><a href="probability-basics.html#condprob"><i class="fa fa-check"></i><b>3.4.1</b> Conditional Probability Formulas</a></li>
 <li class="chapter" data-level="3.4.2" data-path="probability-basics.html"><a href="probability-basics.html#independence"><i class="fa fa-check"></i><b>3.4.2</b> Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="probability-basics.html"><a href="probability-basics.html#bayes-theorem"><i class="fa fa-check"></i><b>3.5</b> Bayes Theorem</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="probability-basics.html"><a href="probability-basics.html#bayes-theorem-intuition"><i class="fa fa-check"></i><b>3.5.1</b> Bayes Theorem Intuition</a></li>
+<li class="chapter" data-level="3.5.2" data-path="probability-basics.html"><a href="probability-basics.html#law-of-total-probability"><i class="fa fa-check"></i><b>3.5.2</b> Law of Total Probability</a></li>
+<li class="chapter" data-level="3.5.3" data-path="probability-basics.html"><a href="probability-basics.html#bayes-theorem-formula"><i class="fa fa-check"></i><b>3.5.3</b> Bayes Theorem Formula</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -140,7 +146,7 @@
 <h1 number="3"><span class="header-section-number">3</span> Probability Basics</h1>
 <div id="equiprob" class="section level2" number="3.1">
 <h2 number="3.1"><span class="header-section-number">3.1</span> Equally Likely Events</h2>
-<p>If we flip a coin it is said that heads and tails have the same probability because the percentage of both heads and tails tend toward the number <span class="math inline">\(.5\)</span> as the number of coin flips in an experiment increases. Think of a <strong>probability</strong> as the percent of time an outcome occurs when many trials are performed. Here are the results of a simulation.</p>
+<p>If we flip a coin it is said that heads and tails have the same probability because the percentage of both heads and tails tend toward <span class="math inline">\(50\%\)</span> as the number of coin flips increases. Think of a <strong>probability</strong> as the percent of time an outcome occurs when many trials are performed. Here are the results of a simulation.</p>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -195,15 +201,15 @@ Percent Heads
 <div id="sample-spaces-and-events" class="section level3" number="3.2.1">
 <h3 number="3.2.1"><span class="header-section-number">3.2.1</span> Sample Spaces and Events</h3>
 <p>In probability we talk about experiments, sample spaces, and events.</p>
-<p>When we flip a coin or roll a die that is an <strong>experiment</strong>.</p>
-<p>The set of all possible outcomes of an experiment is the <strong>sample space</strong>. When we flip a coin once the sample space is <span class="math inline">\(\{H,T\}\)</span>. When we flip a coin twice the sample space is <span class="math inline">\(\{HH,HT,TH,TT\}\)</span>.</p>
-<p><strong>Events</strong> represent a set of possible outcomes from an experiment. When we flip two coins there is an event for flipping two heads, <span class="math inline">\(\{HH\}\)</span>. There is also an event for not flipping two heads <span class="math inline">\(\{HT,TH,TT\}\)</span>. An event is a subset of the sample space. It may represent a single outcome of our experiment, or it may represent several of the possible outcomes:
+<p>When we flip a coin or roll a die that is an <strong>experiment</strong>. Experiments have a set of possible outcomes that happen with some probability.</p>
+<p>The set of all possible outcomes of an experiment is the <strong>sample space</strong>. When we flip a coin once the sample space is <span class="math inline">\(S=\{H,T\}\)</span>. When we flip a coin twice the sample space is <span class="math inline">\(S=\{HH,HT,TH,TT\}\)</span>.</p>
+<p><strong>Events</strong> represent a set of possible outcomes from an experiment. When we flip two coins there is an event for flipping two heads, <span class="math inline">\(E_\text{both heads}=\{HH\}\)</span>. There is also an event for not flipping two heads <span class="math inline">\(E_\text{not both heads}=\{HT,TH,TT\}\)</span>. An event is a subset of the sample space. It may represent a single outcome of our experiment, or it may represent several of the possible outcomes:
 <span class="math display">\[E \subseteq S\]</span></p>
-<p>Now we can rewrite our formula for probabilities when all outcomes of an experiment are equally likely using <span class="math inline">\(n(E)\)</span> for the number of selected outcomes.
+<p>We can rewrite our formula for probabilities when all outcomes of an experiment are equally likely using <span class="math inline">\(n(E)\)</span> for the number of selected outcomes.
 <span class="math display">\[\frac{\text{Number of Selected Outcomes}}{\text{Number of Total Possible Outcomes}} = \frac{n(E)}{n(S)}\]</span></p>
 <hr />
 <p><strong>Example: Rolling Dice</strong></p>
-<p>We roll two dice and see that the dice sum to 4. Define the experiment, sample space, event, and calculate the probability of the event.</p>
+<p>We roll two dice and want to calculate the probability that the dice sum to 4. Define the experiment, sample space, event, and calculate the probability of the event.</p>
 <p>The experiment is rolling two dice.</p>
 <p>The sample space has 36 elements, we can define it in set-builder notation:
 <span class="math display">\[\{(a,b)|a,b \in \{1,2,3,4,5,6\}\}\]</span>
@@ -218,11 +224,12 @@ The probability is
 <h2 number="3.3"><span class="header-section-number">3.3</span> Probability Functions</h2>
 <p>There is a function called a probability function, denoted <span class="math inline">\(P\)</span>, that calculates the probability of an event. When we flip a coin twice the probability of getting a head and a tail is:
 <span class="math display">\[P(\{HT, TH\})=.5\]</span>
-<span class="math inline">\(P\)</span> is a function that takes an event as input and gives a number between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> as output. In notation:
-<span class="math display">\[P:E \mapsto [0,1]\]</span>
-The output is between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> because an event can’t happen less than <span class="math inline">\(0\%\)</span> of the time or more than <span class="math inline">\(100\%\)</span> of the time.</p>
+For experiments where all outcomes are equally likely:
+<span class="math display">\[P(E) = \frac{n(E)}{n(S)}\]</span>
+A probability is between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> because an event can’t happen less than <span class="math inline">\(0\%\)</span> of the time or more than <span class="math inline">\(100\%\)</span> of the time. More formally, <span class="math inline">\(P\)</span> is a function that takes an event as input and gives a number between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> as output. In notation:
+<span class="math display">\[P:E \mapsto [0,1]\]</span></p>
 <p>If we are being more mathematically rigorous, this rule about probabilities being between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> is derived from some more basic assumptions and not intuition about the percentage of times something occurs. Let’s talk about these basic assumptions.</p>
-<div id="probability-axioms" class="section level3" number="3.3.1">
+<div id="axiomsprob" class="section level3" number="3.3.1">
 <h3 number="3.3.1"><span class="header-section-number">3.3.1</span> Probability Axioms</h3>
 <p>There are three fundamental assumptions (called axioms) about probability functions from which our other laws are derived.</p>
 <p><strong>First Axiom</strong> - For an event <span class="math inline">\(E\)</span>, and probability function <span class="math inline">\(P\)</span>:
@@ -235,8 +242,8 @@ For <strong>two mutually exclusive</strong> events events the third axiom is:
 <span class="math display">\[P(E_1 \cup E_2) = P(E_1)+P(E_2)\]</span></p>
 <p>There are several formulas that are useful for this exam that can be derived from these axioms. We can derive the formula for the probability of the complement of an event:
 <span class="math display">\[P(A)+P(A^C) = P(A \cup A^C) = \ P(S) = 1 \ using \ Axioms \ 2 \ and \ 3\]</span>
-Since <span class="math inline">\(P(A^C)+P(A) = 1 \implies P(A^C) = 1-P(A)\)</span></p>
-<p>Here is a list of useful formulas that can be derived from these axioms.
+Since <span class="math inline">\(P(A^C)+P(A) = 1 \implies P(A^C) = 1-P(A)\)</span>.</p>
+<p>Here are some useful formulas that can be derived from these axioms.
 <span class="math display">\[Complements: \ P(A^C) = 1 - P(A) \\
 Upper \ Bound:P(A) \leq 1 \\
 General \ Probability \ of \ 2 \ Unions: P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
@@ -250,8 +257,8 @@ We know that <span class="math inline">\(P(\{H\}), P(\{T\})=.5\)</span> from our
 <hr />
 </div>
 </div>
-<div id="conditional-probability" class="section level2" number="3.4">
-<h2 number="3.4"><span class="header-section-number">3.4</span> Conditional Probability</h2>
+<div id="conditional-probability-and-independence" class="section level2" number="3.4">
+<h2 number="3.4"><span class="header-section-number">3.4</span> Conditional Probability and Independence</h2>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -341,7 +348,53 @@ The general formula for this is <span class="math display">\[P(A|B)=\frac{P(A \c
 <p><strong>Definition of Independence</strong>: Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be independent if <span class="math inline">\(P(A|B)=P(A)\)</span>.</p>
 <p>This definition is equivalent to <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span> after substitution with the <a href="probability-basics.html#condprob">conditional probability formulas</a>. This identity has it’s own name:</p>
 <p><strong>Multiplication Rule for Independent Events</strong>: If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events then <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span>.</p>
+<p>Let <span class="math inline">\(H_n\)</span> be the event that the nth flip of a coin is heads so that <span class="math inline">\(H_2\)</span> means the second coin flip is heads. The multiplication rule for independent events works for more than two events if all events are mutually independent so that <span class="math inline">\(P(H_1 \cap H_2 \cap H_3 \cap H_4)=P(H_1)\times P(H_2)\times P(H_3)\times P(H_4) = (\frac{1}{2})^4\)</span>.</p>
+</div>
+</div>
+<div id="bayes-theorem" class="section level2" number="3.5">
+<h2 number="3.5"><span class="header-section-number">3.5</span> Bayes Theorem</h2>
+<div id="bayes-theorem-intuition" class="section level3" number="3.5.1">
+<h3 number="3.5.1"><span class="header-section-number">3.5.1</span> Bayes Theorem Intuition</h3>
+<p>Suppose 1% of the population uses drugs. 98% of drug users test positive on a drug test and 2% of non-users test positive. What is the probability that a person testing positive for a drug test has used drugs?</p>
+<p><img src="Pictures/03-Probability/BayesTreeSmall.PNG" /></p>
+<p>Using the above tree diagram and the definition of conditional probability we calculate: <span class="math display">\[P(User|Positive) = \frac{P(User \cap Positive)}{P(Positive)}= \\ 
+\frac{P(User \cap Positive)}{P(Positive \cap Not \ User) + (Positive \cap User)} =\\  \frac{P(Positive|User) \times P(User)}{P(Positive|User) \times P(User)+P(Positive|Not \ User) \times P(Not \ User)} = \\
+\frac{.0099}{.0099+.0099}=\frac{1}{2}\]</span></p>
+<p>Let’s explain these steps in more detail.</p>
+</div>
+<div id="law-of-total-probability" class="section level3" number="3.5.2">
+<h3 number="3.5.2"><span class="header-section-number">3.5.2</span> Law of Total Probability</h3>
+<p>In our calculation when we go from the first to the second line we use the identity <span class="math inline">\(P(Positive)=P(Positive \cap User)+P(Positive \cap Not \ User)\)</span>, but how do we know this is true?
+<span class="math inline">\(Positive \cap User\)</span> only contains drug users and <span class="math inline">\(Positive \cap Not \ User\)</span> only contains non-users. These events are mutually exclusive so <span class="math inline">\(P(Positive \cap User)+P(Positive \cap Not \ User) = P((Positive \cap User) \cup (Positive \cap Not \ User))\)</span> using our <a href="probability-basics.html#axiomsprob">third probability axiom</a>. Using the distributive property for intersections with the identities
+<span class="math display">\[A^C \cup A = Sample \ Space, \quad A \cap (Sample \ Space) = A\]</span>
+we can see that:
+<span class="math display">\[(Positive \cap User) \cup (Positive \cap Not \ User) = Positive \cap (User \cup Not \ User) = \\ Positive \cap (Sample \ Space) = Positive\]</span>
+This is how we know that <span class="math inline">\(P(Positive)=P(Positive \cap User)+P(Positive \cap Not \ User)\)</span>.</p>
+<p>There is a more general formulation of this known as the <strong>law of total probability</strong>:</p>
+<hr />
+<p>Events <span class="math inline">\(A_1,A_2,...,A_n\)</span> are said to be a <strong>partition</strong> of the sample space <span class="math inline">\(S\)</span> if <span class="math inline">\(A_1 \cup A_2 \cup... \cup A_n=S\)</span> and if for all <span class="math inline">\(i,j: \ A_i \cap A_j = \emptyset\)</span>. This just means that the sets <span class="math inline">\(A_1,A_2,...,A_n\)</span> cover the whole set and there is no overlap between the sets.</p>
+<p>If sets <span class="math inline">\(A_1,A_2,...,A_n\)</span> partition <span class="math inline">\(S\)</span> then for any event <span class="math inline">\(E\)</span> we have <strong>the law of total probability</strong>:
+<span class="math display">\[P(E) = P(E \cap (A_1 \cup A_2 \cup ... \cup A_n)) = \\ P(E \cap A_1) + P(E \cap A_2) + ... + P(E \cap A_n) = \\ P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)\]</span></p>
+<p>Here is a visual:</p>
+<p><img src="Pictures/03-Probability/totalprob.PNG" /></p>
+<p>The proof of the law of total probability is outlined in our discussion of drug users.</p>
+<hr />
+</div>
+<div id="bayes-theorem-formula" class="section level3" number="3.5.3">
+<h3 number="3.5.3"><span class="header-section-number">3.5.3</span> Bayes Theorem Formula</h3>
+<div id="derivation-using-law-of-total-probability" class="section level4" number="3.5.3.1">
+<h4 number="3.5.3.1"><span class="header-section-number">3.5.3.1</span> Derivation Using Law of Total Probability</h4>
+<p>In our previous example every person is either a drug user or not so this partitions the sample space into two regions, <span class="math inline">\(User\)</span> and <span class="math inline">\(Not \ User\)</span>. We can use the definition of conditional probability to say:
+<span class="math display">\[P(User|Positive)=\frac{P(User \cap Positive)}{P(Positive)}\]</span>
+We use the law of total probability in the denominator to expand it and convert all expressions of the form <span class="math inline">\(P(A \cap B)\)</span> to expressions of the form <span class="math inline">\(P(B | A) \times P(A)\)</span>. The result is:
+<span class="math display">\[\frac{P(Positive|User) \times P(User)}{P(Positive|User) \times P(User)+P(Positive|Not \ User) \times P(Not \ User)}\]</span></p>
+</div>
+<div id="bayes-theorem-statement" class="section level4" number="3.5.3.2">
+<h4 number="3.5.3.2"><span class="header-section-number">3.5.3.2</span> Bayes Theorem Statement</h4>
+<p>For a partition <span class="math inline">\(A_1,A_2,...,A_n\)</span> and event <span class="math inline">\(E\)</span>:
+<span class="math display">\[P(E|A_k) = \frac{P(E|A_k) \times P(A_k)}{P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)}\]</span></p>
 
+</div>
 </div>
 </div>
 </div>

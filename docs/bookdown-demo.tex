@@ -80,7 +80,7 @@
 
 \title{An Exam P Study Guide}
 \author{Actuary Helper}
-\date{2019-12-29}
+\date{2019-12-31}
 
 \begin{document}
 \frontmatter
@@ -303,7 +303,7 @@ Here is an example that combines permutations and combinations. ``How many ways 
 \hypertarget{equiprob}{%
 \section{Equally Likely Events}\label{equiprob}}
 
-If we flip a coin it is said that heads and tails have the same probability because the percentage of both heads and tails tend toward the number \(.5\) as the number of coin flips in an experiment increases. Think of a \textbf{probability} as the percent of time an outcome occurs when many trials are performed. Here are the results of a simulation.
+If we flip a coin it is said that heads and tails have the same probability because the percentage of both heads and tails tend toward \(50\%\) as the number of coin flips increases. Think of a \textbf{probability} as the percent of time an outcome occurs when many trials are performed. Here are the results of a simulation.
 
 Number of Trials
 
@@ -346,21 +346,21 @@ The answer is then:
 
 In probability we talk about experiments, sample spaces, and events.
 
-When we flip a coin or roll a die that is an \textbf{experiment}.
+When we flip a coin or roll a die that is an \textbf{experiment}. Experiments have a set of possible outcomes that happen with some probability.
 
-The set of all possible outcomes of an experiment is the \textbf{sample space}. When we flip a coin once the sample space is \(\{H,T\}\). When we flip a coin twice the sample space is \(\{HH,HT,TH,TT\}\).
+The set of all possible outcomes of an experiment is the \textbf{sample space}. When we flip a coin once the sample space is \(S=\{H,T\}\). When we flip a coin twice the sample space is \(S=\{HH,HT,TH,TT\}\).
 
-\textbf{Events} represent a set of possible outcomes from an experiment. When we flip two coins there is an event for flipping two heads, \(\{HH\}\). There is also an event for not flipping two heads \(\{HT,TH,TT\}\). An event is a subset of the sample space. It may represent a single outcome of our experiment, or it may represent several of the possible outcomes:
+\textbf{Events} represent a set of possible outcomes from an experiment. When we flip two coins there is an event for flipping two heads, \(E_\text{both heads}=\{HH\}\). There is also an event for not flipping two heads \(E_\text{not both heads}=\{HT,TH,TT\}\). An event is a subset of the sample space. It may represent a single outcome of our experiment, or it may represent several of the possible outcomes:
 \[E \subseteq S\]
 
-Now we can rewrite our formula for probabilities when all outcomes of an experiment are equally likely using \(n(E)\) for the number of selected outcomes.
+We can rewrite our formula for probabilities when all outcomes of an experiment are equally likely using \(n(E)\) for the number of selected outcomes.
 \[\frac{\text{Number of Selected Outcomes}}{\text{Number of Total Possible Outcomes}} = \frac{n(E)}{n(S)}\]
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \textbf{Example: Rolling Dice}
 
-We roll two dice and see that the dice sum to 4. Define the experiment, sample space, event, and calculate the probability of the event.
+We roll two dice and want to calculate the probability that the dice sum to 4. Define the experiment, sample space, event, and calculate the probability of the event.
 
 The experiment is rolling two dice.
 
@@ -378,14 +378,15 @@ The probability is
 
 There is a function called a probability function, denoted \(P\), that calculates the probability of an event. When we flip a coin twice the probability of getting a head and a tail is:
 \[P(\{HT, TH\})=.5\]
-\(P\) is a function that takes an event as input and gives a number between \(0\) and \(1\) as output. In notation:
+For experiments where all outcomes are equally likely:
+\[P(E) = \frac{n(E)}{n(S)}\]
+A probability is between \(0\) and \(1\) because an event can't happen less than \(0\%\) of the time or more than \(100\%\) of the time. More formally, \(P\) is a function that takes an event as input and gives a number between \(0\) and \(1\) as output. In notation:
 \[P:E \mapsto [0,1]\]
-The output is between \(0\) and \(1\) because an event can't happen less than \(0\%\) of the time or more than \(100\%\) of the time.
 
 If we are being more mathematically rigorous, this rule about probabilities being between \(0\) and \(1\) is derived from some more basic assumptions and not intuition about the percentage of times something occurs. Let's talk about these basic assumptions.
 
-\hypertarget{probability-axioms}{%
-\subsection{Probability Axioms}\label{probability-axioms}}
+\hypertarget{axiomsprob}{%
+\subsection{Probability Axioms}\label{axiomsprob}}
 
 There are three fundamental assumptions (called axioms) about probability functions from which our other laws are derived.
 
@@ -400,9 +401,9 @@ For \textbf{two mutually exclusive} events events the third axiom is:
 
 There are several formulas that are useful for this exam that can be derived from these axioms. We can derive the formula for the probability of the complement of an event:
 \[P(A)+P(A^C) = P(A \cup A^C) = \ P(S) = 1 \ using \ Axioms \ 2 \ and \ 3\]
-Since \(P(A^C)+P(A) = 1 \implies P(A^C) = 1-P(A)\)
+Since \(P(A^C)+P(A) = 1 \implies P(A^C) = 1-P(A)\).
 
-Here is a list of useful formulas that can be derived from these axioms.
+Here are some useful formulas that can be derived from these axioms.
 \[Complements: \ P(A^C) = 1 - P(A) \\
 Upper \ Bound:P(A) \leq 1 \\
 General \ Probability \ of \ 2 \ Unions: P(A \cup B) = P(A) + P(B) - P(A \cap B) \\
@@ -420,8 +421,8 @@ We know that \(P(\{H\}), P(\{T\})=.5\) from our formula for equally likely event
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{conditional-probability}{%
-\section{Conditional Probability}\label{conditional-probability}}
+\hypertarget{conditional-probability-and-independence}{%
+\section{Conditional Probability and Independence}\label{conditional-probability-and-independence}}
 
 Fluffy
 
@@ -495,6 +496,68 @@ Let the event that the first card pulled without replacement from a deck is a ja
 This definition is equivalent to \(P(A \cap B) = P(A) \times P(B)\) after substitution with the \protect\hyperlink{condprob}{conditional probability formulas}. This identity has it's own name:
 
 \textbf{Multiplication Rule for Independent Events}: If \(A\) and \(B\) are independent events then \(P(A \cap B) = P(A) \times P(B)\).
+
+Let \(H_n\) be the event that the nth flip of a coin is heads so that \(H_2\) means the second coin flip is heads. The multiplication rule for independent events works for more than two events if all events are mutually independent so that \(P(H_1 \cap H_2 \cap H_3 \cap H_4)=P(H_1)\times P(H_2)\times P(H_3)\times P(H_4) = (\frac{1}{2})^4\).
+
+\hypertarget{bayes-theorem}{%
+\section{Bayes Theorem}\label{bayes-theorem}}
+
+\hypertarget{bayes-theorem-intuition}{%
+\subsection{Bayes Theorem Intuition}\label{bayes-theorem-intuition}}
+
+Suppose 1\% of the population uses drugs. 98\% of drug users test positive on a drug test and 2\% of non-users test positive. What is the probability that a person testing positive for a drug test has used drugs?
+
+\includegraphics{Pictures/03-Probability/BayesTreeSmall.PNG}
+
+Using the above tree diagram and the definition of conditional probability we calculate: \[P(User|Positive) = \frac{P(User \cap Positive)}{P(Positive)}= \\ 
+\frac{P(User \cap Positive)}{P(Positive \cap Not \ User) + (Positive \cap User)} =\\  \frac{P(Positive|User) \times P(User)}{P(Positive|User) \times P(User)+P(Positive|Not \ User) \times P(Not \ User)} = \\
+\frac{.0099}{.0099+.0099}=\frac{1}{2}\]
+
+Let's explain these steps in more detail.
+
+\hypertarget{law-of-total-probability}{%
+\subsection{Law of Total Probability}\label{law-of-total-probability}}
+
+In our calculation when we go from the first to the second line we use the identity \(P(Positive)=P(Positive \cap User)+P(Positive \cap Not \ User)\), but how do we know this is true?
+\(Positive \cap User\) only contains drug users and \(Positive \cap Not \ User\) only contains non-users. These events are mutually exclusive so \(P(Positive \cap User)+P(Positive \cap Not \ User) = P((Positive \cap User) \cup (Positive \cap Not \ User))\) using our \protect\hyperlink{axiomsprob}{third probability axiom}. Using the distributive property for intersections with the identities
+\[A^C \cup A = Sample \ Space, \quad A \cap (Sample \ Space) = A\]
+we can see that:
+\[(Positive \cap User) \cup (Positive \cap Not \ User) = Positive \cap (User \cup Not \ User) = \\ Positive \cap (Sample \ Space) = Positive\]
+This is how we know that \(P(Positive)=P(Positive \cap User)+P(Positive \cap Not \ User)\).
+
+There is a more general formulation of this known as the \textbf{law of total probability}:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Events \(A_1,A_2,...,A_n\) are said to be a \textbf{partition} of the sample space \(S\) if \(A_1 \cup A_2 \cup... \cup A_n=S\) and if for all \(i,j: \ A_i \cap A_j = \emptyset\). This just means that the sets \(A_1,A_2,...,A_n\) cover the whole set and there is no overlap between the sets.
+
+If sets \(A_1,A_2,...,A_n\) partition \(S\) then for any event \(E\) we have \textbf{the law of total probability}:
+\[P(E) = P(E \cap (A_1 \cup A_2 \cup ... \cup A_n)) = \\ P(E \cap A_1) + P(E \cap A_2) + ... + P(E \cap A_n) = \\ P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)\]
+
+Here is a visual:
+
+\includegraphics{Pictures/03-Probability/totalprob.PNG}
+
+The proof of the law of total probability is outlined in our discussion of drug users.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{bayes-theorem-formula}{%
+\subsection{Bayes Theorem Formula}\label{bayes-theorem-formula}}
+
+\hypertarget{derivation-using-law-of-total-probability}{%
+\subsubsection{Derivation Using Law of Total Probability}\label{derivation-using-law-of-total-probability}}
+
+In our previous example every person is either a drug user or not so this partitions the sample space into two regions, \(User\) and \(Not \ User\). We can use the definition of conditional probability to say:
+\[P(User|Positive)=\frac{P(User \cap Positive)}{P(Positive)}\]
+We use the law of total probability in the denominator to expand it and convert all expressions of the form \(P(A \cap B)\) to expressions of the form \(P(B | A) \times P(A)\). The result is:
+\[\frac{P(Positive|User) \times P(User)}{P(Positive|User) \times P(User)+P(Positive|Not \ User) \times P(Not \ User)}\]
+
+\hypertarget{bayes-theorem-statement}{%
+\subsubsection{Bayes Theorem Statement}\label{bayes-theorem-statement}}
+
+For a partition \(A_1,A_2,...,A_n\) and event \(E\):
+\[P(E|A_k) = \frac{P(E|A_k) \times P(A_k)}{P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)}\]
 
 \backmatter
   \bibliography{book.bib,packages.bib}
