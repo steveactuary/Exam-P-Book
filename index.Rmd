@@ -97,12 +97,6 @@ Let's see if these laws make any sense. Let $T$ be the set of tennis players and
 #### Associativity
 Just like you can add more than two numbers together you can take the intersection or union of more than two sets. For example $\{1,2\} \cap \{2,3\} \cap \{3,4\} = \emptyset$. There are no elements in the intersection of these three sets because no number appears in all three sets, so this is the empty set. Intersections are associative, meaning $(A \cap B) \cap C= A \cap (B \cap C)$, so it doesn't matter what order you take a group of intersections in. Unions are also associative, $(A \cup B) \cup C= A \cup (B \cup C)$.
 
-#### Messy Venn Diagrams
-You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn't bother drawing a Venn diagram for 4 sets.
-
-![](Pictures/01-Sets/Venn3.PNG)
-![](Pictures/01-Sets/Venn4.PNG)
-
 #### Distributive Property
 If you mix together unions and intersections in an expression it isn't associative. Can you think of an example?
 $$A \cap (B \cup C) \not= (A \cap B) \cup C$$ 
@@ -110,4 +104,12 @@ There are distributive formulas for situations like this.
 $$A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
  A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$$ 
 Because of this it is said that intersection distributes over unions, and that unions distribute across intersections. It is easier to remember these distributive formulas by comparing them to the way multiplication distributes over addition. $a(b+c)=ab+ac$. Just pretend that the multiplication is an intersection and the addition is a union.
+
+#### Messy Venn Diagrams
+You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn't bother drawing a Venn diagram for 4 sets.
+
+![](Pictures/01-Sets/Venn3.PNG)
+![](Pictures/01-Sets/Venn4.PNG)
+
+
 

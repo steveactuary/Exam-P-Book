@@ -80,8 +80,24 @@
 
 \title{An Exam P Study Guide}
 \author{Actuary Helper}
-\date{2019-12-31}
+\date{2020-01-04}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \frontmatter
 \maketitle
@@ -190,14 +206,6 @@ Let's see if these laws make any sense. Let \(T\) be the set of tennis players a
 
 Just like you can add more than two numbers together you can take the intersection or union of more than two sets. For example \(\{1,2\} \cap \{2,3\} \cap \{3,4\} = \emptyset\). There are no elements in the intersection of these three sets because no number appears in all three sets, so this is the empty set. Intersections are associative, meaning \((A \cap B) \cap C= A \cap (B \cap C)\), so it doesn't matter what order you take a group of intersections in. Unions are also associative, \((A \cup B) \cup C= A \cup (B \cup C)\).
 
-\hypertarget{messy-venn-diagrams}{%
-\subsubsection{Messy Venn Diagrams}\label{messy-venn-diagrams}}
-
-You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn't bother drawing a Venn diagram for 4 sets.
-
-\includegraphics{Pictures/01-Sets/Venn3.PNG}
-\includegraphics{Pictures/01-Sets/Venn4.PNG}
-
 \hypertarget{distributive-property}{%
 \subsubsection{Distributive Property}\label{distributive-property}}
 
@@ -207,6 +215,14 @@ There are distributive formulas for situations like this.
 \[A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
  A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\]
 Because of this it is said that intersection distributes over unions, and that unions distribute across intersections. It is easier to remember these distributive formulas by comparing them to the way multiplication distributes over addition. \(a(b+c)=ab+ac\). Just pretend that the multiplication is an intersection and the addition is a union.
+
+\hypertarget{messy-venn-diagrams}{%
+\subsubsection{Messy Venn Diagrams}\label{messy-venn-diagrams}}
+
+You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn't bother drawing a Venn diagram for 4 sets.
+
+\includegraphics{Pictures/01-Sets/Venn3.PNG}
+\includegraphics{Pictures/01-Sets/Venn4.PNG}
 
 \hypertarget{counting}{%
 \chapter{Counting}\label{counting}}
@@ -558,6 +574,185 @@ We use the law of total probability in the denominator to expand it and convert 
 
 For a partition \(A_1,A_2,...,A_n\) and event \(E\):
 \[P(E|A_k) = \frac{P(E|A_k) \times P(A_k)}{P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)}\]
+
+\hypertarget{random-variables}{%
+\chapter{Random Variables}\label{random-variables}}
+
+\hypertarget{what-is-a-random-variable}{%
+\section{What is a Random Variable}\label{what-is-a-random-variable}}
+
+\textbf{A random variable is a number determined by chance}. What is the temperature in my city tomorrow? This is a number determined by chance, a random variable. OK sorry. I lied about a random variable being a number. Actually, \textbf{a random variable is a function} that takes an element of the sample space as input and produces a real number. What does that mean?
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Counting Heads]
+\protect\hypertarget{exm:counthead}{}{\label{exm:counthead} \iffalse (Counting Heads) \fi{} }If you flip a coin twice the sample space is \(S=\{HH,HT,TH,TT\}\). We define a random variable \(X\) that maps the sequence of heads and tails to the number of heads. For example, \(X(HT)=1\) because there is exactly 1 head. See below that a random variable is a function that takes elements of the sample space and outputs a number.
+
+\includegraphics{Pictures/04-RV/XIsAFunction.PNG}
+\EndKnitrBlock{example}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Let's return to the question of tomorrow's temperature. I said this is a random variable because it is a random number. But I thought random variables were functions, not numbers? Why did I lie to you?
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Tomorrow's Temperature]
+\protect\hypertarget{exm:temperatures}{}{\label{exm:temperatures} \iffalse (Tomorrow's Temperature) \fi{} }The set of possible temperatures measured in degrees farenheit is the sample space \(S\). Our random variable is a function that sends a temperature in degrees farenheit to the real number that represents the temperature. Notice that there are no units for \(X(s)\), it is a real number.
+
+\includegraphics{Pictures/04-RV/temperatures.PNG}
+
+See that a random variable is a function. It is just a very simple one.
+\EndKnitrBlock{example}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Students can get confused about random variables because often the random variable is something simple like in the temperature example. The student then begins to overgeneralize and confuse random variables with sample spaces.
+
+The important part of random variables isn't being able to describe them as being a function. The important part is being able to calculate the probability that tomorrow is a warm day. Let's get into that.
+
+\hypertarget{probability-distribution-functions}{%
+\section{Probability Distribution Functions}\label{probability-distribution-functions}}
+
+\hypertarget{probability-of-an-outcome}{%
+\subsection{Probability of an Outcome}\label{probability-of-an-outcome}}
+
+We can calculate the probability of a random variable being a particular value. Let's work an example.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Probability of One Head]
+\protect\hypertarget{exm:unnamed-chunk-2}{}{\label{exm:unnamed-chunk-2} \iffalse (Probability of One Head) \fi{} }Again we are flipping a coin twice and \(S=\{HH,HT,TH,TT\}\). Let \(s \in S\), and \(X\) is the random variable for the number of heads. \(X(s) = 1\) when \(s \in \{HT,TH\}\). To calculate the probability of \(X(s) = 1\):
+\[P(X(s)=1)=P(\{HT,TH\})=\frac{1}{2}\]
+\EndKnitrBlock{example}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Even though \(X\) is a function we usually don't write it as such. Instead of saying \(X(s)=1\) we usually just write \(X=1\) and it is understood that \(X\) is a function. In our previous example we could rewrite it as \(P(X=1)=P(\{HT,TH\})=\frac{1}{2}\).
+
+\hypertarget{probability-distribution-function-definition}{%
+\subsection{Probability Distribution Function Definition}\label{probability-distribution-function-definition}}
+
+It is common to calculate the probability of a random variable being a value \(x\), \(P(X=x)\). It is so common that we call it a ``probability distribution function'' (abbreviated \textbf{PDF}) and give it special notation.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{definition}[Probability Distribution Function]
+\protect\hypertarget{def:unnamed-chunk-3}{}{\label{def:unnamed-chunk-3} \iffalse (Probability Distribution Function) \fi{} }The probability distribution calculates \(P(X=x)\). There is a special way to write this, instead of using a capital \(P\) we use a lowercase \(p\) and say that:
+\[p(x)=P(X = x)\]
+
+Some properties of the probability distribution function are that the probability of an outcome is between 0 and 1, and that the sum of the probability of all possible outcomes is 1:
+
+For \(x \in S\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(0 \leq p(x) \leq 1\)
+\item
+  \(\sum p(x)=1\)
+\end{itemize}
+\EndKnitrBlock{definition}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The table below shows the probabilities from our coin flipping example \ref{exm:counthead}. The probabilities are between \(0\) and \(1\) and sum up to \(1\) as expected.
+
+x
+
+0
+
+1
+
+2
+
+p(x)
+
+.25
+
+.5
+
+.25
+
+\hypertarget{cdf}{%
+\section{Cumulative Distribution Functions}\label{cdf}}
+
+Again we are flipping the coin twice and counting the heads. We can calculate the probability of \(0\) heads as \(.25\), and the probability of \(1\) head as \(.5\).
+
+Now we can also calculate \(P(X \leq 1) = p(0)+p(1) = .25+.5=.75\). Calculations of this sort are very common, we call it the cumulative distribution function (abbreviated \textbf{CDF}). There is a special notation for this.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{definition}[Cumulative Distribution Function]
+\protect\hypertarget{def:unnamed-chunk-5}{}{\label{def:unnamed-chunk-5} \iffalse (Cumulative Distribution Function) \fi{} }The cumulative distribution function calculates \(P(X \leq x)\). There is a special way to write this:
+\[F(x)=P(X \leq x)\]
+
+We can calculate the cumulative distribution function by summing the probability density function:
+\[F(x_0) = \displaystyle\sum_{x \leq x_0} p(x)\]
+\EndKnitrBlock{definition}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+We calculate the cumulative distribution function for our coin flipping example, see that the CDF is the cumulative sum of the PDF.
+
+x
+
+0
+
+1
+
+2
+
+p(x)
+
+.25
+
+.5
+
+.25
+
+F(x)
+
+.25
+
+.75
+
+1.00
+
+In the above table we only define the CDF at points \(0,1,2\) but we can also calculate the CDF at \(.5\). \[F(.5)=P(X \leq .5) = \displaystyle\sum_{x \leq .5} p(x) = p(0) = .25\]
+The CDF only changes at values where there are outcomes that happen with some probability. Understand why the graph below looks the way it does.
+
+\includegraphics{Pictures/04-RV/CDFPlot.PNG}
+
+\hypertarget{discrete-vs.-continuous-random-variables}{%
+\section{Discrete vs.~Continuous Random Variables}\label{discrete-vs.-continuous-random-variables}}
+
+So far we have only talked about flipping coins. When I flip a coin twice the only possible numbers for the heads are \(\{0,1,2\}\). This is an example of a \textbf{discrete random variable}. Discrete means that only certain numbers are possible. Plotting the possible outcomes on a number line yields a series of points.
+
+\includegraphics{Pictures/04-RV/discrete.PNG}
+
+Some random variables are \textbf{continuous}. This means that the outcomes are intervals instead of points. The length of a cat is continuous, the length could truly be any number.
+
+\includegraphics{Pictures/04-RV/continuous.PNG}
+
+Some random variables are continuous and discrete \textbf{mixed} together. If my speakers volume knob must be between \(0\) and \(2\) then often my speakers will often be turned to exactly \(0\) (no sound) or \(2\) (max sound). If the volume knob is somewhere between \(0\) and \(2\) it could be turned to any number, like 1.5543\ldots, so the volume knob is a mixture of discrete and continuous.
+
+\includegraphics{Pictures/04-RV/mixed.PNG}
+
+\hypertarget{a-bit-more-precise}{%
+\subsection{A Bit More Precise}\label{a-bit-more-precise}}
+
+In the volume knob example the possible outcomes come from the interval \([0,2]\), this sounds continuous? What about it exactly is mixed? In the CDF there is a jump at \(0\) because \(P(X \leq -.01)=0\) but \(P(X \leq 0) =\) the probability that the volume is zero.
+
+\includegraphics{Pictures/04-RV/mixedplot.PNG}
+
+Generally discrete distributions are just going to bounce around without ever smoothly increasing over an interval. Consider the coin flipping CDF graph at the end of last section. Continuous distributions smoothly increase over intervals. Let our random variable be a randomly draw a number in \([0,1]\). The CDF smoothly increases from \(0\) to \(1\) on \([0,1]\).
+\includegraphics{Pictures/04-RV/continuousplot.PNG}
+
+The CDF jumps at a point \(x\) when \(P(X=x)\) is nonzero, consider our volume knob example for evidence of this. A randomly selected number from \([0,1]\) is \textbf{exactly} \(.5\) with probability \(0\), so the continuous random variable has no jumps. There are infinitely many numbers in \([0,1]\) and \(.5\) is only one of these infinitely many numbers. From our formula for equally likely outcomes:
+\[\frac{\text{Number of Selected Outcomes}}{\text{Number of Total Outcomes}}=\frac{1}{\infty}=0\]
+
+We are still not telling the whole story. Continuous distributions end up using a bunch of calculus and we will discuss them in a later chapter.
 
 \backmatter
   \bibliography{book.bib,packages.bib}

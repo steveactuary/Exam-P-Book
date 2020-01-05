@@ -24,7 +24,7 @@
 <meta name="author" content="Actuary Helper" />
 
 
-<meta name="date" content="2019-12-31" />
+<meta name="date" content="2020-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,6 +122,20 @@
 <li class="chapter" data-level="3.5.3" data-path="probability-basics.html"><a href="probability-basics.html#bayes-theorem-formula"><i class="fa fa-check"></i><b>3.5.3</b> Bayes Theorem Formula</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>4</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="random-variables.html"><a href="random-variables.html#what-is-a-random-variable"><i class="fa fa-check"></i><b>4.1</b> What is a Random Variable</a></li>
+<li class="chapter" data-level="4.2" data-path="random-variables.html"><a href="random-variables.html#probability-distribution-functions"><i class="fa fa-check"></i><b>4.2</b> Probability Distribution Functions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="random-variables.html"><a href="random-variables.html#probability-of-an-outcome"><i class="fa fa-check"></i><b>4.2.1</b> Probability of an Outcome</a></li>
+<li class="chapter" data-level="4.2.2" data-path="random-variables.html"><a href="random-variables.html#probability-distribution-function-definition"><i class="fa fa-check"></i><b>4.2.2</b> Probability Distribution Function Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="random-variables.html"><a href="random-variables.html#cdf"><i class="fa fa-check"></i><b>4.3</b> Cumulative Distribution Functions</a></li>
+<li class="chapter" data-level="4.4" data-path="random-variables.html"><a href="random-variables.html#discrete-vs.-continuous-random-variables"><i class="fa fa-check"></i><b>4.4</b> Discrete vs. Continuous Random Variables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="random-variables.html"><a href="random-variables.html#a-bit-more-precise"><i class="fa fa-check"></i><b>4.4.1</b> A Bit More Precise</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -145,7 +159,7 @@
 <div id="header">
 <h1 class="title">An Exam P Study Guide</h1>
 <p class="author"><em>Actuary Helper</em></p>
-<p class="date"><em>2019-12-31</em></p>
+<p class="date"><em>2020-01-04</em></p>
 </div>
 <div id="an-introduction-to-set-theory" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> An Introduction to Set Theory</h1>
@@ -218,20 +232,20 @@ One way of memorizing these formulas is that you bring the complement inside the
 <h4 number="1.4.3.1"><span class="header-section-number">1.4.3.1</span> Associativity</h4>
 <p>Just like you can add more than two numbers together you can take the intersection or union of more than two sets. For example <span class="math inline">\(\{1,2\} \cap \{2,3\} \cap \{3,4\} = \emptyset\)</span>. There are no elements in the intersection of these three sets because no number appears in all three sets, so this is the empty set. Intersections are associative, meaning <span class="math inline">\((A \cap B) \cap C= A \cap (B \cap C)\)</span>, so it doesn’t matter what order you take a group of intersections in. Unions are also associative, <span class="math inline">\((A \cup B) \cup C= A \cup (B \cup C)\)</span>.</p>
 </div>
-<div id="messy-venn-diagrams" class="section level4" number="1.4.3.2">
-<h4 number="1.4.3.2"><span class="header-section-number">1.4.3.2</span> Messy Venn Diagrams</h4>
-<p>You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn’t bother drawing a Venn diagram for 4 sets.</p>
-<p><img src="Pictures/01-Sets/Venn3.PNG" />
-<img src="Pictures/01-Sets/Venn4.PNG" /></p>
-</div>
-<div id="distributive-property" class="section level4" number="1.4.3.3">
-<h4 number="1.4.3.3"><span class="header-section-number">1.4.3.3</span> Distributive Property</h4>
+<div id="distributive-property" class="section level4" number="1.4.3.2">
+<h4 number="1.4.3.2"><span class="header-section-number">1.4.3.2</span> Distributive Property</h4>
 <p>If you mix together unions and intersections in an expression it isn’t associative. Can you think of an example?
 <span class="math display">\[A \cap (B \cup C) \not= (A \cap B) \cup C\]</span>
 There are distributive formulas for situations like this.
 <span class="math display">\[A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
  A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\]</span>
 Because of this it is said that intersection distributes over unions, and that unions distribute across intersections. It is easier to remember these distributive formulas by comparing them to the way multiplication distributes over addition. <span class="math inline">\(a(b+c)=ab+ac\)</span>. Just pretend that the multiplication is an intersection and the addition is a union.</p>
+</div>
+<div id="messy-venn-diagrams" class="section level4" number="1.4.3.3">
+<h4 number="1.4.3.3"><span class="header-section-number">1.4.3.3</span> Messy Venn Diagrams</h4>
+<p>You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn’t bother drawing a Venn diagram for 4 sets.</p>
+<p><img src="Pictures/01-Sets/Venn3.PNG" />
+<img src="Pictures/01-Sets/Venn4.PNG" /></p>
 
 </div>
 </div>
