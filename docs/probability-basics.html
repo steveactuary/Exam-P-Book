@@ -24,7 +24,7 @@
 <meta name="author" content="Actuary Helper" />
 
 
-<meta name="date" content="2020-01-04" />
+<meta name="date" content="2020-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,6 +134,18 @@
 <li class="chapter" data-level="4.4" data-path="random-variables.html"><a href="random-variables.html#discrete-vs.-continuous-random-variables"><i class="fa fa-check"></i><b>4.4</b> Discrete vs. Continuous Random Variables</a>
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="random-variables.html"><a href="random-variables.html#a-bit-more-precise"><i class="fa fa-check"></i><b>4.4.1</b> A Bit More Precise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html"><i class="fa fa-check"></i><b>5</b> Functions of Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#what-is-the-mean"><i class="fa fa-check"></i><b>5.1</b> What is the Mean?</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#y-ax-b"><i class="fa fa-check"></i><b>5.1.1</b> Y = aX + b</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#what-is-variance"><i class="fa fa-check"></i><b>5.2</b> What is Variance?</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#defining-variance"><i class="fa fa-check"></i><b>5.2.1</b> Defining Variance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#variance-intuition"><i class="fa fa-check"></i><b>5.2.2</b> Variance Intuition</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -389,7 +401,7 @@ This is how we know that <span class="math inline">\(P(Positive)=P(Positive \cap
 <p>Events <span class="math inline">\(A_1,A_2,...,A_n\)</span> are said to be a <strong>partition</strong> of the sample space <span class="math inline">\(S\)</span> if <span class="math inline">\(A_1 \cup A_2 \cup... \cup A_n=S\)</span> and if for all <span class="math inline">\(i,j: \ A_i \cap A_j = \emptyset\)</span>. This just means that the sets <span class="math inline">\(A_1,A_2,...,A_n\)</span> cover the whole set and there is no overlap between the sets.</p>
 <p>If sets <span class="math inline">\(A_1,A_2,...,A_n\)</span> partition <span class="math inline">\(S\)</span> then for any event <span class="math inline">\(E\)</span> we have <strong>the law of total probability</strong>:
 <span class="math display">\[P(E) = P(E \cap (A_1 \cup A_2 \cup ... \cup A_n)) = \\ P(E \cap A_1) + P(E \cap A_2) + ... + P(E \cap A_n) = \\ P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)\]</span></p>
-<p>Here is a visual:</p>
+<p>Here is a visual explaining the intuition behind the equality in the first line of the equations above:</p>
 <p><img src="Pictures/03-Probability/totalprob.PNG" /></p>
 <p>The proof of the law of total probability is outlined in our discussion of drug users.</p>
 <hr />

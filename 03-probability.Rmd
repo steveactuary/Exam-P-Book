@@ -188,7 +188,7 @@ Events $A_1,A_2,...,A_n$ are said to be a **partition** of the sample space $S$ 
 If sets $A_1,A_2,...,A_n$ partition $S$ then for any event $E$ we have **the law of total probability**:
 $$P(E) = P(E \cap (A_1 \cup A_2 \cup ... \cup A_n)) = \\ P(E \cap A_1) + P(E \cap A_2) + ... + P(E \cap A_n) = \\ P(E|A_1) \times P(A_1) +...+ P(E|A_n) \times P(A_n)$$
 
-Here is a visual:
+Here is a visual explaining the intuition behind the equality in the first line of the equations above:
 
 ![](Pictures/03-Probability/totalprob.PNG)
 

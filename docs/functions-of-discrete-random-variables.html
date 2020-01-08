@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>An Exam P Study Guide</title>
+  <title>5 Functions of Discrete Random Variables | An Exam P Study Guide</title>
   <meta name="description" content="This is a study guide for exam P." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="An Exam P Study Guide" />
+  <meta property="og:title" content="5 Functions of Discrete Random Variables | An Exam P Study Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="An Exam P Study Guide" />
+  <meta name="twitter:title" content="5 Functions of Discrete Random Variables | An Exam P Study Guide" />
   
   <meta name="twitter:description" content="This is a study guide for exam P." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="random-variables.html"/>
 
-<link rel="next" href="counting.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -168,98 +168,175 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">An Exam P Study Guide</h1>
-<p class="author"><em>Actuary Helper</em></p>
-<p class="date"><em>2020-01-07</em></p>
-</div>
-<div id="an-introduction-to-set-theory" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> An Introduction to Set Theory</h1>
-<div id="defining-sets" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Defining Sets</h2>
-<p>Sets are collections of objects. Usually objects are placed inside curly braces and separated by commas. Here is the set with the numbers 1 and 2. We often give sets a name. This set is named “A”. <span class="math display">\[A=\{1,2\}\]</span></p>
-<p>Objects inside the curly braces are called elements of the set. There is a special character that means “is an element of”. Using our notation we can say that 1 is an element of A. <span class="math display">\[1 \in A\]</span></p>
-<p>We can also say that 3 is not an element of A by drawing a slash through our symbol.
-<span class="math display">\[3 \not\in A\]</span>
-We can define sets in a something called set-builder notation. Set builder notation is useful for infinite sets or sets that are hard to enumerate. Below are some examples.</p>
-<p>We can define the even numbers as <span class="math inline">\(\{x | x \ is \  an \  even \ number\}\)</span></p>
-<p>We can define hands of cards as <span class="math inline">\(\{x | x \ is \  a \ 5 \ element \ subset \ of \ a \ deck \ of \ cards\}\)</span></p>
-<p>To read set builder notation we translate the “|” as “where”. So the real numbers are “the set of x where x is a real number”.</p>
-</div>
-<div id="set-equality-and-subsets" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Set Equality and Subsets</h2>
-<p>Sets are equal when they have the same elements. This means order doesn’t matter in sets, <span class="math inline">\(\{1,2\} = \{2,1\}\)</span> because they have the same elements. Also, <span class="math inline">\(\{1,1,2\} = \{1,2\}\)</span> and we say that sets don’t have duplicate elements because duplicate elements have no purpose.</p>
-<p>A set is a subset of another set when it fits inside of it. There is a symbol that looks like <span class="math inline">\(\leq\)</span> that means “is a subset of”. For example <span class="math inline">\(\{1,2\} \subseteq \{1,2,3\}\)</span>. It is also true that any set is a subset of itself, so <span class="math inline">\(\{1,2\} \subseteq \{1,2\}\)</span>. In more precise terms <span class="math inline">\(A \subseteq B\)</span> if and only if every element of A is also an element of B.</p>
-<p>A common technique to prove that two sets are equal is to show that <span class="math inline">\(A \subseteq B\)</span> and <span class="math inline">\(B \subseteq A\)</span>. This means there is no element in either set that does not belong to the other and the sets are equal.</p>
-</div>
-<div id="set-operations-and-venn-diagrams" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Set Operations and Venn Diagrams</h2>
-<p>Just like you can add numbers together to make a new number, you can combine sets and make a new set. Let’s define some sets.</p>
-<p><span class="math display">\[S = \{1,2,3,4,5,6,7,8,9,10\} \\
- A = \{1,3,5,7\} \\
- B = \{2,3,4,5\}\]</span></p>
-<div id="venn-diagram" class="section level3" number="1.3.1">
-<h3 number="1.3.1"><span class="header-section-number">1.3.1</span> Venn Diagram</h3>
-<p>There is a visual representation of sets called a Venn Diagram. In a Venn Diagram each set is represented by a circle. The sample space is usually represented by a large box that the circles are inside of.</p>
-<p><img src="Pictures/01-Sets/Venn.PNG" /></p>
-</div>
-<div id="union" class="section level3" number="1.3.2">
-<h3 number="1.3.2"><span class="header-section-number">1.3.2</span> Union</h3>
-<p>An element is in the union of A and B if it is in A, B, or A and B. The notation for this operation is <span class="math inline">\(A \cup B\)</span> and it is pronounced “A union B”. Here is the set that results from this union: <span class="math inline">\(A \cup B = \{1,2,3,4,5,7\}\)</span></p>
-<p><img src="Pictures/01-Sets/AUB.PNG" /></p>
-</div>
-<div id="intersection" class="section level3" number="1.3.3">
-<h3 number="1.3.3"><span class="header-section-number">1.3.3</span> Intersection</h3>
-<p>An element is in the intersection of A and B if it is in A and B. The notation for this operation is <span class="math inline">\(A \cap B\)</span> and it is pronounced “A intersect B”. Here is the set that results from this intersection: <span class="math inline">\(A \cap B = \{3,5\}\)</span></p>
-<p><img src="Pictures/01-Sets/AcapB.PNG" /></p>
-</div>
-<div id="complement" class="section level3" number="1.3.4">
-<h3 number="1.3.4"><span class="header-section-number">1.3.4</span> Complement</h3>
-<p>An element is in the complement of A if it is not in A, but is in the sample space. The notation for the complement of A is <span class="math inline">\(A^C\)</span> and is pronounced “A complement” or “the complement of A”. Here is the result of taking the complement of A: <span class="math inline">\(A^C = \{2,4,6,8,9,10\}\)</span>. Note that in general <span class="math inline">\((A^C)^C = A\)</span>.</p>
-<p><img src="Pictures/01-Sets/AC.PNG" /></p>
-</div>
-<div id="set-difference" class="section level3" number="1.3.5">
-<h3 number="1.3.5"><span class="header-section-number">1.3.5</span> Set Difference</h3>
-<p>The set difference of A and B elements that are in A but not in B. The notation is either <span class="math inline">\(A \backslash B\)</span> or <span class="math inline">\(A - B\)</span> and is pronounced “A minus B”. Here is the result of this set difference: <span class="math inline">\(A - B = \{7,1\}\)</span>. It is worth noting that <span class="math inline">\(A-B=A \cap B^C\)</span> because the elements are in A and they are not in B.</p>
-<p><img src="Pictures/01-Sets/A-B.PNG" /></p>
-</div>
-</div>
-<div id="special-sets-and-identities" class="section level2" number="1.4">
-<h2 number="1.4"><span class="header-section-number">1.4</span> Special Sets and Identities</h2>
-<div id="sample-space-and-empty-set" class="section level3" number="1.4.1">
-<h3 number="1.4.1"><span class="header-section-number">1.4.1</span> Sample Space and Empty Set</h3>
-<p>The sample space is a type of special set because all other sets are subset of it. This leads to some commonsensical identities like <span class="math inline">\(A \cup S = S\)</span> and <span class="math inline">\(A \cap S = A\)</span>. There is another special set called the empty set. This set has no elements. We could write it as <span class="math inline">\(\{\}\)</span> but the common way to write this is <span class="math inline">\(\emptyset\)</span>. Some properties of the empty set are <span class="math inline">\(A \cup \emptyset = A\)</span> and <span class="math inline">\(A \cap \emptyset = \emptyset\)</span>. It is also true that <span class="math inline">\(\emptyset^C = S\)</span> and <span class="math inline">\(S^C = \emptyset\)</span>.</p>
-</div>
-<div id="de-morgans-laws" class="section level3" number="1.4.2">
-<h3 number="1.4.2"><span class="header-section-number">1.4.2</span> De Morgan’s Laws</h3>
-<p>De Morgan’s laws are formulas for the complement of a union or intersection of sets.
-<span class="math display">\[(A \cap B)^C = A^C \cup B^C \\
- (A \cup B)^C = A^C \cap B^C\]</span>
-One way of memorizing these formulas is that you bring the complement inside the parentheses to both sets and flip the union or intersection upside down.</p>
-<p>Let’s see if these laws make any sense. Let <span class="math inline">\(T\)</span> be the set of tennis players and <span class="math inline">\(H\)</span> be the set of hockey players. <span class="math inline">\((T \cap H)^C\)</span> is the set of people that don’t play both tennis and hockey. <span class="math inline">\(T^C \cup H^C\)</span> is people that don’t play tennis or they don’t play hockey.If I don’t play both sports then I either don’t play tennis or I don’t play hockey, so <span class="math inline">\((T \cap H)^C \subseteq T^C \cup H^C\)</span>. If I don’t play tennis or I don’t play hockey then it is true that I don’t play both sports, so <span class="math inline">\(T^C \cup H^C \subseteq (T \cap H)^C\)</span>. This means that the sets are equal, ponder this for some time. A similar argument can be made for the complement of the union. If this is not convincing spend some time with a Venn diagram and see if you can get it to make sense.</p>
-</div>
-<div id="or-more-sets" class="section level3" number="1.4.3">
-<h3 number="1.4.3"><span class="header-section-number">1.4.3</span> 3 or More Sets</h3>
-<div id="associativity" class="section level4" number="1.4.3.1">
-<h4 number="1.4.3.1"><span class="header-section-number">1.4.3.1</span> Associativity</h4>
-<p>Just like you can add more than two numbers together you can take the intersection or union of more than two sets. For example <span class="math inline">\(\{1,2\} \cap \{2,3\} \cap \{3,4\} = \emptyset\)</span>. There are no elements in the intersection of these three sets because no number appears in all three sets, so this is the empty set. Intersections are associative, meaning <span class="math inline">\((A \cap B) \cap C= A \cap (B \cap C)\)</span>, so it doesn’t matter what order you take a group of intersections in. Unions are also associative, <span class="math inline">\((A \cup B) \cup C= A \cup (B \cup C)\)</span>.</p>
-</div>
-<div id="distributive-property" class="section level4" number="1.4.3.2">
-<h4 number="1.4.3.2"><span class="header-section-number">1.4.3.2</span> Distributive Property</h4>
-<p>If you mix together unions and intersections in an expression it isn’t associative. Can you think of an example?
-<span class="math display">\[A \cap (B \cup C) \not= (A \cap B) \cup C\]</span>
-There are distributive formulas for situations like this.
-<span class="math display">\[A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
- A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\]</span>
-Because of this it is said that intersection distributes over unions, and that unions distribute across intersections. It is easier to remember these distributive formulas by comparing them to the way multiplication distributes over addition. <span class="math inline">\(a(b+c)=ab+ac\)</span>. Just pretend that the multiplication is an intersection and the addition is a union.</p>
-</div>
-<div id="messy-venn-diagrams" class="section level4" number="1.4.3.3">
-<h4 number="1.4.3.3"><span class="header-section-number">1.4.3.3</span> Messy Venn Diagrams</h4>
-<p>You can draw a Venn diagram for three sets with three circles. It gets a little complicated. I wouldn’t bother drawing a Venn diagram for 4 sets.</p>
-<p><img src="Pictures/01-Sets/Venn3.PNG" />
-<img src="Pictures/01-Sets/Venn4.PNG" /></p>
+<div id="functions-of-discrete-random-variables" class="section level1" number="5">
+<h1 number="5"><span class="header-section-number">5</span> Functions of Discrete Random Variables</h1>
+<div id="what-is-the-mean" class="section level2" number="5.1">
+<h2 number="5.1"><span class="header-section-number">5.1</span> What is the Mean?</h2>
+<p>Your friend plays a game with you where he flips a coin twice. You win <span class="math inline">\(10\$\)</span> if both flips are heads, and lose <span class="math inline">\(4\$\)</span> otherwise. Let’s simulate some results to see if we should play this game.</p>
+<p><img src="Pictures/05-Expectations/Rplot02.png" /></p>
+<p>After <span class="math inline">\(50\)</span> games we might think this is a fun game but in fact the odds are stacked against us. On average we lose .5 dollars per game. In our simulation notice that the average payoff approaches <span class="math inline">\(-.5\)</span>.</p>
+<p><img src="Pictures/05-Expectations/averagepayoff.PNG" /></p>
+<p>We can calculate the average payoff over the <span class="math inline">\(10,000\)</span> simulated games by adding up the payoffs and dividing by the number of games:</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Games Played
+</th>
+<th style="text-align:left;">
+Wins
+</th>
+<th style="text-align:left;">
+Losses
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+10000
+</td>
+<td style="text-align:left;">
+2501
+</td>
+<td style="text-align:left;">
+7499
+</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\frac{\sum \text{Payoff} }{\text{Number of Games}} = \frac{2501 \times 10 + 7499 \times {-4}}{10000}=-0.4986\]</span>
+We can do some rearranging:
+<span class="math display">\[\frac{2501 \times 10 + 7499 \times{-4}}{10000} = \frac{2501}{10000}(10)+\frac{7499}{10000}({-4}) = \\ \%  \text{Wins} \times 10 + \% \text{Losses} \times {-4}\]</span></p>
+<p>As the number of trials increases <span class="math inline">\(\% \text{Wins}\)</span> approaches <span class="math inline">\(P(\{HH\})\)</span> and <span class="math inline">\(\% \text{Losses}\)</span> approaches <span class="math inline">\(P(\{HT,TH,TT\})\)</span>. We can define a random variable <span class="math inline">\(X\)</span> to represent the payoff with a probability distribution function of:
+<span class="math display">\[p(10) = P(\{HH\}) = .25 \\ p(-4) = P(\{HT,TH,TT\})=.75\]</span>
+We can then write the long term average payoff as:
+<span class="math display">\[{-4} \times p({-4})+10 \times p(10) = .75 \times {-4} + .25 \times 10=-.5\]</span>
+So the long term payoff of our random variable is <span class="math inline">\(.5\)</span>. When we have a random variable <span class="math inline">\(X\)</span> that represents the payoff, we say that this is the <strong>mean</strong> of <span class="math inline">\(X\)</span>.</p>
+<hr />
 
+<div class="definition">
+<p><span id="def:expectedvalue" class="definition"><strong>Definition 3  (Expected Value)  </strong></span>The mean of a random variable <span class="math inline">\(X\)</span> is also called the <strong>expected value</strong> and is denoted by <span class="math inline">\(E(X)\)</span> or <span class="math inline">\(\mu\)</span>. To calculate the value of the mean we take the probability weighted sum of the possible values of the random variable.</p>
+<p><span class="math display">\[ \mu = E(X) = \sum p(x) \times x\]</span></p>
 </div>
+<hr />
+<p>Take a moment and see that the summation in our calculation is the same one performed in our calculation of the coin flipping game.</p>
+<hr />
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-13" class="example"><strong>Example 4  (Average Heads)  </strong></span>We flip a coin twice, let <span class="math inline">\(X\)</span> be the number of heads. What is <span class="math inline">\(E(X)\)</span>?</p>
+<span class="math display">\[E(X) = p(0) \cdot 0 + p(1) \cdot 1 + p(2) \cdot 2 = .25 \cdot 0 + .5 \cdot 1 + .25 \cdot 2 = 1\]</span>
+</div>
+<hr />
+<div id="y-ax-b" class="section level3" number="5.1.1">
+<h3 number="5.1.1"><span class="header-section-number">5.1.1</span> Y = aX + b</h3>
+<p>Suppose we flip a coin twice. We play a game where we receive <span class="math inline">\(2\$\)</span> for every head we flip. Let the random variable for the number of dollars we receive be <span class="math inline">\(Y\)</span> and the random variable for the number of heads flipped be <span class="math inline">\(X\)</span>. Notice that <span class="math inline">\(Y=2X\)</span>.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Probability
+</td>
+<td style="text-align:left;">
+.25
+</td>
+<td style="text-align:left;">
+.5
+</td>
+<td style="text-align:left;">
+.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Heads
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+Dollars
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+4
+</td>
+</tr>
+</tbody>
+</table>
+<p>We calculate <span class="math inline">\(E(Y)\)</span>:
+<span class="math display">\[E(Y) = .25 \cdot 0 + .5 \cdot 2 + .25 \cdot 4 = 2\]</span>
+<span class="math inline">\(E(Y) = 2\)</span> and from example <a href="random-variables.html#exm:counthead">1</a>, <span class="math inline">\(E(X) = 1\)</span>. This makes sense because <span class="math inline">\(Y = X-1\)</span>. What if we got <span class="math inline">\(4\)</span> dollars or <span class="math inline">\(7\)</span> dollars for each head? In general if we get <span class="math inline">\(a\)</span> dollars per head:</p>
+<p><span class="math display">\[\begin{align}
+E(Y) &amp;= .25 \cdot 0 + .5 \cdot a + .25 \cdot 2a \notag \\
+&amp;= a(.25 \cdot 0 + .5 \cdot 1 + .25 \cdot 2) \notag \\
+&amp;= aE(X) \notag
+\end{align}\]</span></p>
+<p>Let’s make a new game. We still get <span class="math inline">\(2\)</span> dollars for each head but this time we have to pay <span class="math inline">\(1\)</span> dollar to play. Let the random variable representing the payout be <span class="math inline">\(Z\)</span>. Note that <span class="math inline">\(Z=Y-1\)</span>. We calculate <span class="math inline">\(E(Z)\)</span>:</p>
+<p><span class="math display">\[E(Z) = .25 \cdot {-1} + .5 \cdot 1 + .25 \cdot 3=1\]</span>
+Notice that <span class="math inline">\(E(Z) = E(Y) - 1\)</span> which makes sense since <span class="math inline">\(Z = Y - 1\)</span>. What if we have to pay a different amount? Let’s come up with a formula for <span class="math inline">\(Z\)</span> = <span class="math inline">\(Y-a\)</span></p>
+<p><span class="math display">\[\begin{align} 
+E(Z) &amp;= .25 \cdot (0-a) + .5 \cdot (2-a) + .25 \cdot (4-a) \notag \\
+&amp;= (.25 \cdot 0 + .5 \cdot 2 + .25 \cdot 4) + a(.25+.5+.25) \notag \\
+&amp;= E(Y) - a = 2E(X)-a \notag
+\end{align}\]</span></p>
+<p>These tricks work for any random variable, not just coins. The proof of the following theorem is very similar to the calculations we have been doing.</p>
+<hr />
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-15" class="theorem"><strong>Theorem 1  (E(aX+b)=aE(X)+b)  </strong></span>For a random variable <span class="math inline">\(X\)</span> with constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:
+<span class="math display">\[E(aX+b) = aE(X)+b\]</span>
+</div>
+<hr />
+</div>
+</div>
+<div id="what-is-variance" class="section level2" number="5.2">
+<h2 number="5.2"><span class="header-section-number">5.2</span> What is Variance?</h2>
+<p>At the beginning of the chapter we played a game where we flip a coin twice. We win <span class="math inline">\(10\$\)</span> if both flips are heads and lose <span class="math inline">\(4\$\)</span> otherwise. Let’s increase the bet size. In our new bet we win <span class="math inline">\(28\$\)</span> if both flips are heads and lose <span class="math inline">\(10\$\)</span> otherwise. Experimentally we can see that both of the bets have the same long term average loss of <span class="math inline">\(-.5\)</span>.</p>
+<p><img src="Pictures/05-Expectations/highlowaveragepayoff.PNG" /></p>
+<p>We verify this using the formula for expected values (<a href="functions-of-discrete-random-variables.html#def:expectedvalue">3</a>):
+<span class="math display">\[.25 \cdot 28+.75 \cdot {-10}=-.5\]</span></p>
+<p>A difference between the lower and the higher bet sizes is that with the higher bet is that there are bigger wins and bigger losses. Notice in the graph below how the increases and decreases in money earned are larger with the higher bet size. In this example the higher bet size has the same mean but a higher <strong>variance</strong></p>
+<p><img src="Pictures/05-Expectations/highlowbets.PNG" /></p>
+<div id="defining-variance" class="section level3" number="5.2.1">
+<h3 number="5.2.1"><span class="header-section-number">5.2.1</span> Defining Variance</h3>
+<hr />
+
+<div class="definition">
+<span id="def:variance" class="definition"><strong>Definition 4  (Definition of Variance)  </strong></span>The variance of a random variable <span class="math inline">\(X\)</span> is denoted by <span class="math inline">\(V(X)\)</span>. It is defined as:
+<span class="math display">\[V(X)=E((X-\mu )^2) = \sum (x - \mu)^2 \cdot p(x)\]</span>
+</div>
+<hr />
+<p>Let <span class="math inline">\(X\)</span> be the payoff of the smaller bet sizes and <span class="math inline">\(Y\)</span> be the payoff for the larger bet sizes. We calculate the variance of the payoff for both games.</p>
+<p><img src="Pictures/05-Expectations/highlow_variance_table.PNG" /></p>
+<p><span class="math display">\[V(X) = E((X-\mu)^2) = .25 \cdot (10 - ({-.5}))^2 + .75 \cdot ({-4} - (-.5))^2 = 36.75\]</span>
+<span class="math display">\[V(Y) = E((Y-\mu)^2) = .25 \cdot (28 - ({-.5}))^2 + .75 \cdot ({-10} - (-.5))^2 = 270.75\]</span></p>
+<p>The game with the larger bet sizes has a larger variance, agreeing with our experiments</p>
+<hr />
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-17" class="exercise"><strong>Exercise 1  </strong></span>Let <span class="math inline">\(X\)</span> be <span class="math inline">\(1\)</span> if a coin flips heads and <span class="math inline">\(0\)</span> if it is tails. Show that the <span class="math inline">\(V(X) = .25\)</span>.
+</div>
+<hr />
+</div>
+<div id="variance-intuition" class="section level3" number="5.2.2">
+<h3 number="5.2.2"><span class="header-section-number">5.2.2</span> Variance Intuition</h3>
+<p>Consider that <span class="math inline">\(V(X)=\sum (x - \mu)^2 \cdot p(x)\)</span>. <span class="math inline">\((x - \mu)^2\)</span> is the area of a square with sides of length <span class="math inline">\(x - \mu\)</span>. <span class="math inline">\(V(X)=\sum (x - \mu)^2 \cdot p(x)\)</span> is then the probability weighted sum of the area of squares. Do you see why the larger bet sizes cause a larger variance?</p>
+<p><img src="Pictures/05-Expectations/squares.PNG" /></p>
+
 </div>
 </div>
 </div>
@@ -268,8 +345,8 @@ Because of this it is said that intersection distributes over unions, and that u
           </div>
         </div>
       </div>
+<a href="random-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="counting.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -300,7 +377,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-discretefunctions.Rmd",
 "text": "Edit"
 },
 "history": {
