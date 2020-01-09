@@ -46,7 +46,13 @@
 \contentsline {subsection}{\numberline {4.4.1}A Bit More Precise}{28}{subsection.4.4.1}%
 \contentsline {chapter}{\numberline {5}Functions of Discrete Random Variables}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}What is the Mean?}{31}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Y = aX + b}{33}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.1}E(aX + b)}{33}{subsection.5.1.1}%
 \contentsline {section}{\numberline {5.2}What is Variance?}{35}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Defining Variance}{36}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Variance Intuition}{36}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}V(aX+b)}{37}{subsection.5.2.3}%
+\contentsline {chapter}{\numberline {6}Common Discrete Distributions}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Bernoulli Distribution}{39}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Binomial Distribution}{39}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Mean and Variance of the Binomial Distribution}{41}{subsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.1}Intuition}{41}{subsubsection.6.2.1.1}%

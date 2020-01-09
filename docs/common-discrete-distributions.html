@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Random Variables | An Exam P Study Guide</title>
+  <title>6 Common Discrete Distributions | An Exam P Study Guide</title>
   <meta name="description" content="This is a study guide for exam P." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Random Variables | An Exam P Study Guide" />
+  <meta property="og:title" content="6 Common Discrete Distributions | An Exam P Study Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Random Variables | An Exam P Study Guide" />
+  <meta name="twitter:title" content="6 Common Discrete Distributions | An Exam P Study Guide" />
   
   <meta name="twitter:description" content="This is a study guide for exam P." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="probability-basics.html"/>
-<link rel="next" href="functions-of-discrete-random-variables.html"/>
+<link rel="prev" href="functions-of-discrete-random-variables.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -177,177 +177,95 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="random-variables" class="section level1" number="4">
-<h1 number="4"><span class="header-section-number">4</span> Random Variables</h1>
-<div id="what-is-a-random-variable" class="section level2" number="4.1">
-<h2 number="4.1"><span class="header-section-number">4.1</span> What is a Random Variable</h2>
-<p><strong>A random variable is a number determined by chance</strong>. What is the temperature in my city tomorrow? This is a number determined by chance, a random variable. OK sorry. I lied about a random variable being a number. Actually, <strong>a random variable is a function</strong> that takes an element of the sample space as input and produces a real number. What does that mean?</p>
+<div id="common-discrete-distributions" class="section level1" number="6">
+<h1 number="6"><span class="header-section-number">6</span> Common Discrete Distributions</h1>
+<div id="bernoulli-distribution" class="section level2" number="6.1">
+<h2 number="6.1"><span class="header-section-number">6.1</span> Bernoulli Distribution</h2>
+<p>The Bernoulli distribution is appropriate when there are two outcomes. Success happens with probability <span class="math inline">\(p\)</span> and failure happens with probability <span class="math inline">\(1-p\)</span>.
+<span class="math display" id="eq:bernoulli">\[\begin{equation*} 
+    p(x) =
+    \left\{
+        \begin{array}{cc}
+                p &amp; \mathrm{for\ } x=1 \\
+                1-p &amp; \mathrm{for\ } x=0 \\
+        \end{array} 
+    \right.
+\tag{1}
+\end{equation*}\]</span></p>
 <hr />
 
-<div class="example">
-<p><span id="exm:counthead" class="example"><strong>Example 1  (Counting Heads)  </strong></span>If you flip a coin twice the sample space is <span class="math inline">\(S=\{HH,HT,TH,TT\}\)</span>. We define a random variable <span class="math inline">\(X\)</span> that maps the sequence of heads and tails to the number of heads. For example, <span class="math inline">\(X(HT)=1\)</span> because there is exactly 1 head. See below that a random variable is a function that takes elements of the sample space and outputs a number.</p>
-<img src="Pictures/04-RV/XIsAFunction.PNG" />
+<div class="exercise">
+<span id="exr:bernoulli" class="exercise"><strong>Exercise 3  </strong></span>Let <span class="math inline">\(X\)</span> be a Bernoulli random variable. Show that <span class="math inline">\(E(X)=p\)</span> and that <span class="math inline">\(V(X)=p \cdot (1-p)\)</span>.
 </div>
 <hr />
-<p>Let’s return to the question of tomorrow’s temperature. I said this is a random variable because it is a random number. But I thought random variables were functions, not numbers? Why did I lie to you?</p>
-<hr />
-
-<div class="example">
-<p><span id="exm:temperatures" class="example"><strong>Example 2  (Tomorrow’s Temperature)  </strong></span>The set of possible temperatures measured in degrees farenheit is the sample space <span class="math inline">\(S\)</span>. Our random variable is a function that sends a temperature in degrees farenheit to the real number that represents the temperature. Notice that there are no units for <span class="math inline">\(X(s)\)</span>, it is a real number.</p>
-<p><img src="Pictures/04-RV/temperatures.PNG" /></p>
-See that a random variable is a function. It is just a very simple one.
+<p>The number of heads from a single coin flip is an example of a Bernoulli random variable. The event that the coin lands on heads is success, tails is failure. If the coin is fair, <span class="math inline">\(p\)</span> = .5.</p>
 </div>
-<hr />
-<p>Students can get confused about random variables because often the random variable is something simple like in the temperature example. The student then begins to overgeneralize and confuse random variables with sample spaces.</p>
-<p>The important part of random variables isn’t being able to describe them as being a function. The important part is being able to calculate the probability that tomorrow is a warm day. Let’s get into that.</p>
-</div>
-<div id="probability-distribution-functions" class="section level2" number="4.2">
-<h2 number="4.2"><span class="header-section-number">4.2</span> Probability Distribution Functions</h2>
-<div id="probability-of-an-outcome" class="section level3" number="4.2.1">
-<h3 number="4.2.1"><span class="header-section-number">4.2.1</span> Probability of an Outcome</h3>
-<p>We can calculate the probability of a random variable being a particular value. Let’s work an example.</p>
-<hr />
-
-<div class="example">
-<span id="exm:unnamed-chunk-2" class="example"><strong>Example 3  (Probability of One Head)  </strong></span>Again we are flipping a coin twice and <span class="math inline">\(S=\{HH,HT,TH,TT\}\)</span>. Let <span class="math inline">\(s \in S\)</span>, and <span class="math inline">\(X\)</span> is the random variable for the number of heads. <span class="math inline">\(X(s) = 1\)</span> when <span class="math inline">\(s \in \{HT,TH\}\)</span>. To calculate the probability of <span class="math inline">\(X(s) = 1\)</span>:
-<span class="math display">\[P(X(s)=1)=P(\{HT,TH\})=\frac{1}{2}\]</span>
-</div>
-<hr />
-<p>Even though <span class="math inline">\(X\)</span> is a function we usually don’t write it as such. Instead of saying <span class="math inline">\(X(s)=1\)</span> we usually just write <span class="math inline">\(X=1\)</span> and it is understood that <span class="math inline">\(X\)</span> is a function. In our previous example we could rewrite it as <span class="math inline">\(P(X=1)=P(\{HT,TH\})=\frac{1}{2}\)</span>.</p>
-</div>
-<div id="probability-distribution-function-definition" class="section level3" number="4.2.2">
-<h3 number="4.2.2"><span class="header-section-number">4.2.2</span> Probability Distribution Function Definition</h3>
-<p>It is common to calculate the probability of a random variable being a value <span class="math inline">\(x\)</span>, <span class="math inline">\(P(X=x)\)</span>. It is so common that we call it a “probability distribution function” (abbreviated <strong>PDF</strong>) and give it special notation.</p>
-<hr />
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 1  (Probability Distribution Function)  </strong></span>The probability distribution calculates <span class="math inline">\(P(X=x)\)</span>. There is a special way to write this, instead of using a capital <span class="math inline">\(P\)</span> we use a lowercase <span class="math inline">\(p\)</span> and say that:
-<span class="math display">\[p(x)=P(X = x)\]</span></p>
-<p>Some properties of the probability distribution function are that the probability of an outcome is between 0 and 1, and that the sum of the probability of all possible outcomes is 1:</p>
-<p>For <span class="math inline">\(x \in S\)</span></p>
-<ul>
-<li><span class="math inline">\(0 \leq p(x) \leq 1\)</span></li>
-<li><span class="math inline">\(\sum p(x)=1\)</span></li>
-</ul>
-</div>
-<hr />
-<p>The table below shows the probabilities from our coin flipping example <a href="random-variables.html#exm:counthead">1</a>. The probabilities are between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> and sum up to <span class="math inline">\(1\)</span> as expected.</p>
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<tbody>
-<tr>
-<td style="text-align:left;font-weight: bold;border-right:1px solid;">
-x
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-weight: bold;border-right:1px solid;">
-p(x)
-</td>
-<td style="text-align:left;">
-.25
-</td>
-<td style="text-align:left;">
-.5
-</td>
-<td style="text-align:left;">
-.25
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cdf" class="section level2" number="4.3">
-<h2 number="4.3"><span class="header-section-number">4.3</span> Cumulative Distribution Functions</h2>
-<p>Again we are flipping the coin twice and counting the heads. We can calculate the probability of <span class="math inline">\(0\)</span> heads as <span class="math inline">\(.25\)</span>, and the probability of <span class="math inline">\(1\)</span> head as <span class="math inline">\(.5\)</span>.</p>
-<p>Now we can also calculate <span class="math inline">\(P(X \leq 1) = p(0)+p(1) = .25+.5=.75\)</span>. Calculations of this sort are very common, we call it the cumulative distribution function (abbreviated <strong>CDF</strong>). There is a special notation for this.</p>
+<div id="binomial-distribution" class="section level2" number="6.2">
+<h2 number="6.2"><span class="header-section-number">6.2</span> Binomial Distribution</h2>
+<p>We have an unfair coin that is heads <span class="math inline">\(60\%\)</span> of the time and tails <span class="math inline">\(40\%\)</span> of the time. We flip the coin <span class="math inline">\(5\)</span> times. We express the number of heads as the sum of Bernoulli random variables, <span class="math inline">\(X = H_1 + H_2 + H_3 + H_4 + H_5\)</span> where
+<span class="math display">\[\begin{equation*} 
+    H_i =
+    \left\{
+        \begin{array}{cc}
+                1 \text{ if flip } i \text{ is heads} \\
+                0 \text{ if flip } i \text{ is tails} \\
+        \end{array} 
+    \right.
+\end{equation*}\]</span></p>
+<p>We wish to calculate the probability that all <span class="math inline">\(5\)</span> flips are heads. Because coin flips are independent we can use the rule <span class="math inline">\(P(A \cap B) = P(A) \cdot P(B)\)</span>
+<span class="math display">\[\begin{align} 
+P(X=5) &amp;= P((H_1=1) \cap (H_2=1) \cap (H_3=1) \cap (H_4=1) \cap (H_5=1)) \notag \\
+&amp;=P(H_1=1) \cdot P(H_2=1) \cdot P(H_3=1) \cdot P(H_4=1) \cdot P(H_5=1)  \notag \\
+&amp;= .6^5 \notag
+\end{align}\]</span></p>
+<p>Less formally, the only way to achieve all heads is to flip the sequence <span class="math inline">\(HHHHH\)</span>. Each head happens with probability <span class="math inline">\(.6\)</span> and the answer is <span class="math inline">\(.6^5\)</span>.</p>
+<p>What about the probability of flipping exactly <span class="math inline">\(4\)</span> heads? The sequences that can lead to this outcome are:
+<span class="math display">\[\begin{align} 
+THHHH \notag \\
+HTHHH  \notag \\
+HHTHH \notag \\
+HHHTH \notag \\
+HHHHT \notag
+\end{align}\]</span></p>
+<p>These sequences all represent distinct outcomes for <span class="math inline">\(X\)</span>. Although some of the sequences are the same in some places, each represents a distinct outcome of <span class="math inline">\(X\)</span>, disjoint from all other outcomes. So we can use the addition formula for the probability of disjoint events.
+<span class="math display">\[\begin{align} 
+&amp;P(X=4) = \notag \\
+&amp;P((THHHH) \cup (HTHHH) \cup (HHTHH) \cup (HHHTH) \cup (HHHHT)) = \notag \\
+&amp;P(THHHH) + P(HTHHH) + P(HHTHH) + P(HHHTH) + P(HHHHT)=  \notag \\
+&amp;5 \cdot .6^4 \cdot .4 \notag
+\end{align}\]</span></p>
+<p>What about the probability of <span class="math inline">\(3\)</span> heads? There are many sequences of flips that result in this, like <span class="math inline">\(HTHTH\)</span>. Each of these sequences will have probability <span class="math inline">\(.6^3 \cdot .4^2\)</span> because there are three heads and two tails. To find out how many sequences there are we must answer the question “How many ways are there to assign three of the five coins to be heads?” The answer to this question is:
+<span class="math display">\[{5 \choose 3} = \frac{5!}{3!2!} = 10\]</span>
+There are <span class="math inline">\({5 \choose 3}\)</span> ways to flip <span class="math inline">\(3\)</span> heads and each way has probability <span class="math inline">\(.6^3 \cdot .4^2\)</span>, so the probability of three heads is <span class="math inline">\({5 \choose 3} \cdot .6^3 \cdot .4^2\)</span>.</p>
+<p>This technique works for the other calculations we have done. There are <span class="math inline">\({5 \choose 5} = \frac{5!}{5!0!}=1\)</span> ways to flip <span class="math inline">\(5\)</span> heads and <span class="math inline">\({5 \choose 4} = \frac{5!}{4!1!}=5\)</span> ways to flip <span class="math inline">\(4\)</span> heads.</p>
+<p>Let’s generalize from our coin flipping. We had <span class="math inline">\(5\)</span> independent Bernoulli trials where each Bernoulli trial had a probability of success as <span class="math inline">\(.6\)</span>. What if we had <span class="math inline">\(n\)</span> Bernoulli trials each with a probability of success of <span class="math inline">\(p\)</span>. This is called the <strong>binomial distribution</strong> with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>.</p>
 <hr />
 
-<div class="definition">
-<p><span id="def:unnamed-chunk-5" class="definition"><strong>Definition 2  (Cumulative Distribution Function)  </strong></span>The cumulative distribution function calculates <span class="math inline">\(P(X \leq x)\)</span>. There is a special way to write this:
-<span class="math display">\[F(x)=P(X \leq x)\]</span></p>
-We can calculate the cumulative distribution function by summing the probability density function:
-<span class="math display">\[F(x_0) = \displaystyle\sum_{x \leq x_0} p(x)\]</span>
+<div class="theorem">
+<span id="thm:unnamed-chunk-20" class="theorem"><strong>Theorem 3  (Binomial Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have the binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>. We have:
+<span class="math display">\[p(k) = P(X=k) = {n \choose k}p^k(1-p)^{n-k}\]</span>
 </div>
 <hr />
-<p>We calculate the cumulative distribution function for our coin flipping example, see that the CDF is the cumulative sum of the PDF.</p>
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<tbody>
-<tr>
-<td style="text-align:left;font-weight: bold;border-right:1px solid;">
-x
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-2
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-weight: bold;border-right:1px solid;">
-p(x)
-</td>
-<td style="text-align:left;">
-.25
-</td>
-<td style="text-align:left;">
-.5
-</td>
-<td style="text-align:left;">
-.25
-</td>
-</tr>
-<tr>
-<td style="text-align:left;font-weight: bold;border-right:1px solid;text-decoration: underline;">
-F(x)
-</td>
-<td style="text-align:left;text-decoration: underline;">
-.25
-</td>
-<td style="text-align:left;text-decoration: underline;">
-.75
-</td>
-<td style="text-align:left;text-decoration: underline;">
-1.00
-</td>
-</tr>
-</tbody>
-</table>
-<p>In the above table we only define the CDF at points <span class="math inline">\(0,1,2\)</span> but we can also calculate the CDF at <span class="math inline">\(.5\)</span>. <span class="math display">\[F(.5)=P(X \leq .5) = \displaystyle\sum_{x \leq .5} p(x) = p(0) = .25\]</span>
-The CDF only changes at values where there are outcomes that happen with some probability. Understand why the graph below looks the way it does.</p>
-<p><img src="Pictures/04-RV/CDFPlot.png" /></p>
-</div>
-<div id="discrete-vs.-continuous-random-variables" class="section level2" number="4.4">
-<h2 number="4.4"><span class="header-section-number">4.4</span> Discrete vs. Continuous Random Variables</h2>
-<p>So far we have only talked about flipping coins. When I flip a coin twice the only possible numbers for the heads are <span class="math inline">\(\{0,1,2\}\)</span>. This is an example of a <strong>discrete random variable</strong>. Discrete means that only certain numbers are possible. Plotting the possible outcomes on a number line yields a series of points.</p>
-<p><img src="Pictures/04-RV/discrete.PNG" /></p>
-<p>Some random variables are <strong>continuous</strong>. This means that the outcomes are intervals instead of points. The length of a cat is continuous, the length could truly be any number.</p>
-<p><img src="Pictures/04-RV/continuous.PNG" /></p>
-<p>Some random variables are continuous and discrete <strong>mixed</strong> together. If my speakers volume knob must be between <span class="math inline">\(0\)</span> and <span class="math inline">\(2\)</span> then often my speakers will often be turned to exactly <span class="math inline">\(0\)</span> (no sound) or <span class="math inline">\(2\)</span> (max sound). If the volume knob is somewhere between <span class="math inline">\(0\)</span> and <span class="math inline">\(2\)</span> it could be turned to any number, like 1.5543…, so the volume knob is a mixture of discrete and continuous.</p>
-<p><img src="Pictures/04-RV/mixed.PNG" /></p>
-<div id="a-bit-more-precise" class="section level3" number="4.4.1">
-<h3 number="4.4.1"><span class="header-section-number">4.4.1</span> A Bit More Precise</h3>
-<p>In the volume knob example the possible outcomes come from the interval <span class="math inline">\([0,2]\)</span>, this sounds continuous? What about it exactly is mixed? In the CDF there is a jump at <span class="math inline">\(0\)</span> because <span class="math inline">\(P(X \leq -.01)=0\)</span> but <span class="math inline">\(P(X \leq 0) =\)</span> the probability that the volume is zero.</p>
-<p><img src="Pictures/04-RV/mixedplot.PNG" /></p>
-<p>Generally discrete distributions are just going to bounce around without ever smoothly increasing over an interval. Consider the coin flipping CDF graph at the end of last section. Continuous distributions smoothly increase over intervals. Let our random variable be a randomly draw a number in <span class="math inline">\([0,1]\)</span>. The CDF smoothly increases from <span class="math inline">\(0\)</span> to <span class="math inline">\(1\)</span> on <span class="math inline">\([0,1]\)</span>.
-<img src="Pictures/04-RV/continuousplot.PNG" /></p>
-<p>The CDF jumps at a point <span class="math inline">\(x\)</span> when <span class="math inline">\(P(X=x)\)</span> is nonzero, consider our volume knob example for evidence of this. A randomly selected number from <span class="math inline">\([0,1]\)</span> is <strong>exactly</strong> <span class="math inline">\(.5\)</span> with probability <span class="math inline">\(0\)</span>, so the continuous random variable has no jumps. There are infinitely many numbers in <span class="math inline">\([0,1]\)</span> and <span class="math inline">\(.5\)</span> is only one of these infinitely many numbers. From our formula for equally likely outcomes:
-<span class="math display">\[\frac{\text{Number of Selected Outcomes}}{\text{Number of Total Outcomes}}=\frac{1}{\infty}=0\]</span></p>
-<p>We are still not telling the whole story. Continuous distributions end up using a bunch of calculus and we will discuss them in a later chapter.</p>
+<p>Be sure that this makes perfect sense.</p>
+<div id="mean-and-variance-of-the-binomial-distribution" class="section level3" number="6.2.1">
+<h3 number="6.2.1"><span class="header-section-number">6.2.1</span> Mean and Variance of the Binomial Distribution</h3>
+<p>In exercise <a href="common-discrete-distributions.html#exr:bernoulli">3</a> the motivated student showed that if <span class="math inline">\(X\)</span> is Bernoulli with parameter <span class="math inline">\(p\)</span> then <span class="math inline">\(E(X) = p\)</span> and <span class="math inline">\(V(X) = p(1-p)\)</span>. These formulas for the binomial distribution are very similar.</p>
+<hr />
 
+<div class="theorem">
+<span id="thm:unnamed-chunk-21" class="theorem"><strong>Theorem 4  (Binomial Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have the binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>. We have:
+<span class="math display">\[E(X) = np\]</span>
+<span class="math display">\[V(X) = np(1-p)\]</span>
+</div>
+<hr />
+<div id="intuition" class="section level4" number="6.2.1.1">
+<h4 number="6.2.1.1"><span class="header-section-number">6.2.1.1</span> Intuition</h4>
+<p>Let <span class="math inline">\(X\)</span> be the number of heads from a single coin flip. Let <span class="math inline">\(Y\)</span> be the number of heads from <span class="math inline">\(10\)</span> coin flips.
+<span class="math display">\[E(X)=p=.5\]</span>
+<span class="math display">\[E(Y)=np=10 \cdot .5\]</span></p>
+<p>We can express <span class="math inline">\(Y\)</span> as the sum of single coin flips so <span class="math inline">\(Y = X_1 + ... + X_{10}\)</span>. I feel like I could have guessed that <span class="math inline">\(E(Y)=E(X_1 + ... + X_{10})\)</span></p>
+
+</div>
 </div>
 </div>
 </div>
@@ -356,8 +274,8 @@ The CDF only changes at values where there are outcomes that happen with some pr
           </div>
         </div>
       </div>
-<a href="probability-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="functions-of-discrete-random-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="functions-of-discrete-random-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -388,7 +306,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-randomvariables.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-discretedistributions.Rmd",
 "text": "Edit"
 },
 "history": {

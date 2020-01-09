@@ -24,7 +24,7 @@
 <meta name="author" content="Actuary Helper" />
 
 
-<meta name="date" content="2020-01-07" />
+<meta name="date" content="2020-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="random-variables.html"/>
-
+<link rel="next" href="common-discrete-distributions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -140,12 +140,21 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#what-is-the-mean"><i class="fa fa-check"></i><b>5.1</b> What is the Mean?</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#y-ax-b"><i class="fa fa-check"></i><b>5.1.1</b> Y = aX + b</a></li>
+<li class="chapter" data-level="5.1.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#eax-b"><i class="fa fa-check"></i><b>5.1.1</b> E(aX + b)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#what-is-variance"><i class="fa fa-check"></i><b>5.2</b> What is Variance?</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#defining-variance"><i class="fa fa-check"></i><b>5.2.1</b> Defining Variance</a></li>
 <li class="chapter" data-level="5.2.2" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#variance-intuition"><i class="fa fa-check"></i><b>5.2.2</b> Variance Intuition</a></li>
+<li class="chapter" data-level="5.2.3" data-path="functions-of-discrete-random-variables.html"><a href="functions-of-discrete-random-variables.html#vaxb"><i class="fa fa-check"></i><b>5.2.3</b> V(aX+b)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="common-discrete-distributions.html"><a href="common-discrete-distributions.html"><i class="fa fa-check"></i><b>6</b> Common Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="common-discrete-distributions.html"><a href="common-discrete-distributions.html#bernoulli-distribution"><i class="fa fa-check"></i><b>6.1</b> Bernoulli Distribution</a></li>
+<li class="chapter" data-level="6.2" data-path="common-discrete-distributions.html"><a href="common-discrete-distributions.html#binomial-distribution"><i class="fa fa-check"></i><b>6.2</b> Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="common-discrete-distributions.html"><a href="common-discrete-distributions.html#mean-and-variance-of-the-binomial-distribution"><i class="fa fa-check"></i><b>6.2.1</b> Mean and Variance of the Binomial Distribution</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -228,8 +237,8 @@ So the long term payoff of our random variable is <span class="math inline">\(.5
 <span class="math display">\[E(X) = p(0) \cdot 0 + p(1) \cdot 1 + p(2) \cdot 2 = .25 \cdot 0 + .5 \cdot 1 + .25 \cdot 2 = 1\]</span>
 </div>
 <hr />
-<div id="y-ax-b" class="section level3" number="5.1.1">
-<h3 number="5.1.1"><span class="header-section-number">5.1.1</span> Y = aX + b</h3>
+<div id="eax-b" class="section level3" number="5.1.1">
+<h3 number="5.1.1"><span class="header-section-number">5.1.1</span> E(aX + b)</h3>
 <p>Suppose we flip a coin twice. We play a game where we receive <span class="math inline">\(2\$\)</span> for every head we flip. Let the random variable for the number of dollars we receive be <span class="math inline">\(Y\)</span> and the random variable for the number of heads flipped be <span class="math inline">\(X\)</span>. Notice that <span class="math inline">\(Y=2X\)</span>.</p>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <tbody>
@@ -297,7 +306,7 @@ E(Z) &amp;= .25 \cdot (0-a) + .5 \cdot (2-a) + .25 \cdot (4-a) \notag \\
 <hr />
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-15" class="theorem"><strong>Theorem 1  (E(aX+b)=aE(X)+b)  </strong></span>For a random variable <span class="math inline">\(X\)</span> with constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:
+<span id="thm:unnamed-chunk-15" class="theorem"><strong>Theorem 1  (E(aX+b))  </strong></span>For a random variable <span class="math inline">\(X\)</span> with constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:
 <span class="math display">\[E(aX+b) = aE(X)+b\]</span>
 </div>
 <hr />
@@ -336,6 +345,37 @@ E(Z) &amp;= .25 \cdot (0-a) + .5 \cdot (2-a) + .25 \cdot (4-a) \notag \\
 <h3 number="5.2.2"><span class="header-section-number">5.2.2</span> Variance Intuition</h3>
 <p>Consider that <span class="math inline">\(V(X)=\sum (x - \mu)^2 \cdot p(x)\)</span>. <span class="math inline">\((x - \mu)^2\)</span> is the area of a square with sides of length <span class="math inline">\(x - \mu\)</span>. <span class="math inline">\(V(X)=\sum (x - \mu)^2 \cdot p(x)\)</span> is then the probability weighted sum of the area of squares. Do you see why the larger bet sizes cause a larger variance?</p>
 <p><img src="Pictures/05-Expectations/squares.PNG" /></p>
+</div>
+<div id="vaxb" class="section level3" number="5.2.3">
+<h3 number="5.2.3"><span class="header-section-number">5.2.3</span> V(aX+b)</h3>
+<p>Suppose we flip a coin once. We receive <span class="math inline">\(2\$\)</span> if the coin is heads. Let <span class="math inline">\(X\)</span> be <span class="math inline">\(1\)</span> if heads and <span class="math inline">\(0\)</span> otherwise, and <span class="math inline">\(Y\)</span> be the number of doillars received. Note that <span class="math inline">\(Y=2X\)</span>. <span class="math inline">\(E(Y)=1\)</span> and <span class="math inline">\(E(X)=.5\)</span>, remember that these numbers appear in our variance formula as <span class="math inline">\(\mu\)</span>. We calculate <span class="math inline">\(V(X)\)</span> and <span class="math inline">\(V(Y)\)</span>:
+<span class="math display">\[V(X) = .5 \cdot (0-.5)^2 + .5 \cdot (1-.5)^2=.25\]</span>
+<span class="math display">\[V(Y) = .5 \cdot (0-1)^2 + .5 \cdot (2-1)^2=1\]</span></p>
+<p>There is a good reason that <span class="math inline">\(V(Y) = V(2X)= 2^2\cdot V(X)\)</span></p>
+<p><span class="math display">\[\begin{align} 
+V(Y) &amp;= .5 \cdot (0-1)^2 + .5 \cdot (2-1)^2 \notag \\
+&amp;= .5 \cdot (2 \cdot 0- 2 \cdot .5)^2 + .5 \cdot (2 \cdot 1-2 \cdot .5)^2 \notag \\
+&amp;= 2^2 \cdot (.5 \cdot (0-.5)^2 + .5 \cdot (1-.5)^2) \notag \\
+&amp;= 2^2 \cdot V(X)
+\end{align}\]</span></p>
+<p>In general it is true that <span class="math inline">\(V(aX) = a^2 V(X)\)</span>. The manipulations performed in the coin flipping example could be applied anywhere.</p>
+<p>What if we make a new random variable <span class="math inline">\(Z\)</span> where we make <span class="math inline">\(2\$\)</span> for heads and <span class="math inline">\(1\$\)</span> dollars for tails? In this case <span class="math inline">\(Z = X+1\)</span>. We calculate <span class="math inline">\(V(Z)\)</span>, note that <span class="math inline">\(E(Z)=E(X+1)=E(X)+1=1.5\)</span>:
+<span class="math display">\[V(Z) = .5 \cdot (1-1.5)^2 + .5 \cdot (2-1.5)^2=.25\]</span>
+<span class="math inline">\(V(Z)=V(X)\)</span> because the values are spread out the same distance. In general <span class="math inline">\(V(X+b) = V(X)\)</span> because the translation does not change how far apart the values are. If you are feeling inspired try to write a proof of this.</p>
+<p>Combining these observations we get the following theorem.</p>
+<hr />
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-18" class="theorem"><strong>Theorem 2  (V(aX+b))  </strong></span>For a random variable <span class="math inline">\(X\)</span> with constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:
+<span class="math display">\[V(aX+b) = a^2 V(X)\]</span>
+</div>
+<hr />
+<hr />
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2  </strong></span>Show that <span class="math inline">\(V(-2X+1) = 4V(X)\)</span>.
+</div>
+<hr />
 
 </div>
 </div>
@@ -345,8 +385,8 @@ E(Z) &amp;= .25 \cdot (0-a) + .5 \cdot (2-a) + .25 \cdot (4-a) \notag \\
           </div>
         </div>
       </div>
-<a href="random-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="random-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-discrete-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

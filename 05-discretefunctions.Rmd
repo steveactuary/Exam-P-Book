@@ -77,7 +77,7 @@ $$E(X) = p(0) \cdot 0 + p(1) \cdot 1 + p(2) \cdot 2 = .25 \cdot 0 + .5 \cdot 1 +
 ```
 ***
 
-### Y = aX + b
+### E(aX + b)
 Suppose we flip a coin twice. We play a game where we receive $2\$$ for every head we flip. Let the random variable for the number of dollars we receive be $Y$ and the random variable for the number of heads flipped be $X$. Notice that $Y=2X$.
 
 ```{r, results = "asis", echo = FALSE}
@@ -112,7 +112,7 @@ E(Z) &= .25 \cdot (0-a) + .5 \cdot (2-a) + .25 \cdot (4-a) \notag \\
 These tricks work for any random variable, not just coins. The proof of the following theorem is very similar to the calculations we have been doing.
 
 ***
-```{theorem, name="E(aX+b)=aE(X)+b"}
+```{theorem, name="E(aX+b)"}
 For a random variable $X$ with constants $a$ and $b$:
 $$E(aX+b) = aE(X)+b$$
 ```
@@ -180,5 +180,39 @@ Consider that $V(X)=\sum (x - \mu)^2 \cdot p(x)$. $(x - \mu)^2$ is the area of a
 
 ![](Pictures/05-Expectations/squares.PNG)
 
+### V(aX+b)
+Suppose we flip a coin once. We receive $2\$$ if the coin is heads. Let $X$ be $1$ if heads and $0$ otherwise, and $Y$ be the number of doillars received. Note that $Y=2X$. $E(Y)=1$ and $E(X)=.5$, remember that these numbers appear in our variance formula as $\mu$. We calculate $V(X)$ and $V(Y)$:
+$$V(X) = .5 \cdot (0-.5)^2 + .5 \cdot (1-.5)^2=.25$$
+$$V(Y) = .5 \cdot (0-1)^2 + .5 \cdot (2-1)^2=1$$
+
+There is a good reason that $V(Y) = V(2X)= 2^2\cdot V(X)$
+
+\begin{align} 
+V(Y) &= .5 \cdot (0-1)^2 + .5 \cdot (2-1)^2 \notag \\
+&= .5 \cdot (2 \cdot 0- 2 \cdot .5)^2 + .5 \cdot (2 \cdot 1-2 \cdot .5)^2 \notag \\
+&= 2^2 \cdot (.5 \cdot (0-.5)^2 + .5 \cdot (1-.5)^2) \notag \\
+&= 2^2 \cdot V(X)
+\end{align}
+
+In general it is true that $V(aX) = a^2 V(X)$. The manipulations performed in the coin flipping example could be applied anywhere.
+
+What if we make a new random variable $Z$ where we make $2\$$ for heads and $1\$$ dollars for tails? In this case $Z = X+1$. We calculate $V(Z)$, note that $E(Z)=E(X+1)=E(X)+1=1.5$:
+$$V(Z) = .5 \cdot (1-1.5)^2 + .5 \cdot (2-1.5)^2=.25$$
+$V(Z)=V(X)$ because the values are spread out the same distance. In general $V(X+b) = V(X)$ because the translation does not change how far apart the values are. If you are feeling inspired try to write a proof of this.
+
+Combining these observations we get the following theorem. 
+
+***
+```{theorem, name="V(aX+b)"}
+For a random variable $X$ with constants $a$ and $b$:
+$$V(aX+b) = a^2 V(X)$$
+```
+***
+
+***
+```{exercise}
+Show that $V(-2X+1) = 4V(X)$.
+```
+***
 
 

@@ -80,7 +80,7 @@
 
 \title{An Exam P Study Guide}
 \author{Actuary Helper}
-\date{2020-01-07}
+\date{2020-01-09}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -814,8 +814,8 @@ Take a moment and see that the summation in our calculation is the same one perf
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{y-ax-b}{%
-\subsection{Y = aX + b}\label{y-ax-b}}
+\hypertarget{eax-b}{%
+\subsection{E(aX + b)}\label{eax-b}}
 
 Suppose we flip a coin twice. We play a game where we receive \(2\$\) for every head we flip. Let the random variable for the number of dollars we receive be \(Y\) and the random variable for the number of heads flipped be \(X\). Notice that \(Y=2X\).
 
@@ -868,8 +868,8 @@ These tricks work for any random variable, not just coins. The proof of the foll
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\BeginKnitrBlock{theorem}[E(aX+b)=aE(X)+b]
-\protect\hypertarget{thm:unnamed-chunk-15}{}{\label{thm:unnamed-chunk-15} \iffalse (E(aX+b)=aE(X)+b) \fi{} }For a random variable \(X\) with constants \(a\) and \(b\):
+\BeginKnitrBlock{theorem}[E(aX+b)]
+\protect\hypertarget{thm:unnamed-chunk-15}{}{\label{thm:unnamed-chunk-15} \iffalse (E(aX+b)) \fi{} }For a random variable \(X\) with constants \(a\) and \(b\):
 \[E(aX+b) = aE(X)+b\]
 \EndKnitrBlock{theorem}
 
@@ -924,6 +924,158 @@ The game with the larger bet sizes has a larger variance, agreeing with our expe
 Consider that \(V(X)=\sum (x - \mu)^2 \cdot p(x)\). \((x - \mu)^2\) is the area of a square with sides of length \(x - \mu\). \(V(X)=\sum (x - \mu)^2 \cdot p(x)\) is then the probability weighted sum of the area of squares. Do you see why the larger bet sizes cause a larger variance?
 
 \includegraphics{Pictures/05-Expectations/squares.PNG}
+
+\hypertarget{vaxb}{%
+\subsection{V(aX+b)}\label{vaxb}}
+
+Suppose we flip a coin once. We receive \(2\$\) if the coin is heads. Let \(X\) be \(1\) if heads and \(0\) otherwise, and \(Y\) be the number of doillars received. Note that \(Y=2X\). \(E(Y)=1\) and \(E(X)=.5\), remember that these numbers appear in our variance formula as \(\mu\). We calculate \(V(X)\) and \(V(Y)\):
+\[V(X) = .5 \cdot (0-.5)^2 + .5 \cdot (1-.5)^2=.25\]
+\[V(Y) = .5 \cdot (0-1)^2 + .5 \cdot (2-1)^2=1\]
+
+There is a good reason that \(V(Y) = V(2X)= 2^2\cdot V(X)\)
+
+\begin{align} 
+V(Y) &= .5 \cdot (0-1)^2 + .5 \cdot (2-1)^2 \notag \\
+&= .5 \cdot (2 \cdot 0- 2 \cdot .5)^2 + .5 \cdot (2 \cdot 1-2 \cdot .5)^2 \notag \\
+&= 2^2 \cdot (.5 \cdot (0-.5)^2 + .5 \cdot (1-.5)^2) \notag \\
+&= 2^2 \cdot V(X)
+\end{align}
+
+In general it is true that \(V(aX) = a^2 V(X)\). The manipulations performed in the coin flipping example could be applied anywhere.
+
+What if we make a new random variable \(Z\) where we make \(2\$\) for heads and \(1\$\) dollars for tails? In this case \(Z = X+1\). We calculate \(V(Z)\), note that \(E(Z)=E(X+1)=E(X)+1=1.5\):
+\[V(Z) = .5 \cdot (1-1.5)^2 + .5 \cdot (2-1.5)^2=.25\]
+\(V(Z)=V(X)\) because the values are spread out the same distance. In general \(V(X+b) = V(X)\) because the translation does not change how far apart the values are. If you are feeling inspired try to write a proof of this.
+
+Combining these observations we get the following theorem.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{theorem}[V(aX+b)]
+\protect\hypertarget{thm:unnamed-chunk-18}{}{\label{thm:unnamed-chunk-18} \iffalse (V(aX+b)) \fi{} }For a random variable \(X\) with constants \(a\) and \(b\):
+\[V(aX+b) = a^2 V(X)\]
+\EndKnitrBlock{theorem}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:unnamed-chunk-19}{}{\label{exr:unnamed-chunk-19} }Show that \(V(-2X+1) = 4V(X)\).
+\EndKnitrBlock{exercise}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{common-discrete-distributions}{%
+\chapter{Common Discrete Distributions}\label{common-discrete-distributions}}
+
+\hypertarget{bernoulli-distribution}{%
+\section{Bernoulli Distribution}\label{bernoulli-distribution}}
+
+The Bernoulli distribution is appropriate when there are two outcomes. Success happens with probability \(p\) and failure happens with probability \(1-p\).
+\begin{equation*} 
+    p(x) =
+    \left\{
+        \begin{array}{cc}
+                p & \mathrm{for\ } x=1 \\
+                1-p & \mathrm{for\ } x=0 \\
+        \end{array} 
+    \right.
+\label{eq:bernoulli}
+\end{equation*}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{exercise}
+\protect\hypertarget{exr:bernoulli}{}{\label{exr:bernoulli} }Let \(X\) be a Bernoulli random variable. Show that \(E(X)=p\) and that \(V(X)=p \cdot (1-p)\).
+\EndKnitrBlock{exercise}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The number of heads from a single coin flip is an example of a Bernoulli random variable. The event that the coin lands on heads is success, tails is failure. If the coin is fair, \(p\) = .5.
+
+\hypertarget{binomial-distribution}{%
+\section{Binomial Distribution}\label{binomial-distribution}}
+
+We have an unfair coin that is heads \(60\%\) of the time and tails \(40\%\) of the time. We flip the coin \(5\) times. We express the number of heads as the sum of Bernoulli random variables, \(X = H_1 + H_2 + H_3 + H_4 + H_5\) where
+\begin{equation*} 
+    H_i =
+    \left\{
+        \begin{array}{cc}
+                1 \text{ if flip } i \text{ is heads} \\
+                0 \text{ if flip } i \text{ is tails} \\
+        \end{array} 
+    \right.
+\end{equation*}
+
+We wish to calculate the probability that all \(5\) flips are heads. Because coin flips are independent we can use the rule \(P(A \cap B) = P(A) \cdot P(B)\)
+\begin{align} 
+P(X=5) &= P((H_1=1) \cap (H_2=1) \cap (H_3=1) \cap (H_4=1) \cap (H_5=1)) \notag \\
+&=P(H_1=1) \cdot P(H_2=1) \cdot P(H_3=1) \cdot P(H_4=1) \cdot P(H_5=1)  \notag \\
+&= .6^5 \notag
+\end{align}
+
+Less formally, the only way to achieve all heads is to flip the sequence \(HHHHH\). Each head happens with probability \(.6\) and the answer is \(.6^5\).
+
+What about the probability of flipping exactly \(4\) heads? The sequences that can lead to this outcome are:
+\begin{align} 
+THHHH \notag \\
+HTHHH  \notag \\
+HHTHH \notag \\
+HHHTH \notag \\
+HHHHT \notag
+\end{align}
+
+These sequences all represent distinct outcomes for \(X\). Although some of the sequences are the same in some places, each represents a distinct outcome of \(X\), disjoint from all other outcomes. So we can use the addition formula for the probability of disjoint events.
+\begin{align} 
+&P(X=4) = \notag \\
+&P((THHHH) \cup (HTHHH) \cup (HHTHH) \cup (HHHTH) \cup (HHHHT)) = \notag \\
+&P(THHHH) + P(HTHHH) + P(HHTHH) + P(HHHTH) + P(HHHHT)=  \notag \\
+&5 \cdot .6^4 \cdot .4 \notag
+\end{align}
+
+What about the probability of \(3\) heads? There are many sequences of flips that result in this, like \(HTHTH\). Each of these sequences will have probability \(.6^3 \cdot .4^2\) because there are three heads and two tails. To find out how many sequences there are we must answer the question ``How many ways are there to assign three of the five coins to be heads?'' The answer to this question is:
+\[{5 \choose 3} = \frac{5!}{3!2!} = 10\]
+There are \({5 \choose 3}\) ways to flip \(3\) heads and each way has probability \(.6^3 \cdot .4^2\), so the probability of three heads is \({5 \choose 3} \cdot .6^3 \cdot .4^2\).
+
+This technique works for the other calculations we have done. There are \({5 \choose 5} = \frac{5!}{5!0!}=1\) ways to flip \(5\) heads and \({5 \choose 4} = \frac{5!}{4!1!}=5\) ways to flip \(4\) heads.
+
+Let's generalize from our coin flipping. We had \(5\) independent Bernoulli trials where each Bernoulli trial had a probability of success as \(.6\). What if we had \(n\) Bernoulli trials each with a probability of success of \(p\). This is called the \textbf{binomial distribution} with parameters \(n\) and \(p\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{theorem}[Binomial Distribution]
+\protect\hypertarget{thm:unnamed-chunk-20}{}{\label{thm:unnamed-chunk-20} \iffalse (Binomial Distribution) \fi{} }Let \(X\) have the binomial distribution with parameters \(n\) and \(p\). We have:
+\[p(k) = P(X=k) = {n \choose k}p^k(1-p)^{n-k}\]
+\EndKnitrBlock{theorem}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Be sure that this makes perfect sense.
+
+\hypertarget{mean-and-variance-of-the-binomial-distribution}{%
+\subsection{Mean and Variance of the Binomial Distribution}\label{mean-and-variance-of-the-binomial-distribution}}
+
+In exercise \ref{exr:bernoulli} the motivated student showed that if \(X\) is Bernoulli with parameter \(p\) then \(E(X) = p\) and \(V(X) = p(1-p)\). These formulas for the binomial distribution are very similar.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{theorem}[Binomial Distribution]
+\protect\hypertarget{thm:unnamed-chunk-21}{}{\label{thm:unnamed-chunk-21} \iffalse (Binomial Distribution) \fi{} }Let \(X\) have the binomial distribution with parameters \(n\) and \(p\). We have:
+\[E(X) = np\]
+\[V(X) = np(1-p)\]
+\EndKnitrBlock{theorem}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{intuition}{%
+\subsubsection{Intuition}\label{intuition}}
+
+Let \(X\) be the number of heads from a single coin flip. Let \(Y\) be the number of heads from \(10\) coin flips.
+\[E(X)=p=.5\]
+\[E(Y)=np=10 \cdot .5\]
+
+We can express \(Y\) as the sum of single coin flips so \(Y = X_1 + ... + X_{10}\). I feel like I could have guessed that \(E(Y)=E(X_1 + ... + X_{10})\)
 
 \backmatter
   \bibliography{book.bib,packages.bib}

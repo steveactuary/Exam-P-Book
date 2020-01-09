@@ -1,0 +1,95 @@
+# Common Discrete Distributions
+
+## Bernoulli Distribution
+The Bernoulli distribution is appropriate when there are two outcomes. Success happens with probability $p$ and failure happens with probability $1-p$.
+\begin{equation*} 
+    p(x) =
+    \left\{
+        \begin{array}{cc}
+                p & \mathrm{for\ } x=1 \\
+                1-p & \mathrm{for\ } x=0 \\
+        \end{array} 
+    \right.
+(\#eq:bernoulli)
+\end{equation*}
+
+***
+```{exercise, bernoulli}
+Let $X$ be a Bernoulli random variable. Show that $E(X)=p$ and that $V(X)=p \cdot (1-p)$. 
+```
+***
+
+The number of heads from a single coin flip is an example of a Bernoulli random variable. The event that the coin lands on heads is success, tails is failure. If the coin is fair, $p$ = .5.
+
+## Binomial Distribution
+We have an unfair coin that is heads $60\%$ of the time and tails $40\%$ of the time. We flip the coin $5$ times. We express the number of heads as the sum of Bernoulli random variables, $X = H_1 + H_2 + H_3 + H_4 + H_5$ where 
+\begin{equation*} 
+    H_i =
+    \left\{
+        \begin{array}{cc}
+                1 \text{ if flip } i \text{ is heads} \\
+                0 \text{ if flip } i \text{ is tails} \\
+        \end{array} 
+    \right.
+\end{equation*}
+
+We wish to calculate the probability that all $5$ flips are heads. Because coin flips are independent we can use the rule $P(A \cap B) = P(A) \cdot P(B)$ 
+\begin{align} 
+P(X=5) &= P((H_1=1) \cap (H_2=1) \cap (H_3=1) \cap (H_4=1) \cap (H_5=1)) \notag \\
+&=P(H_1=1) \cdot P(H_2=1) \cdot P(H_3=1) \cdot P(H_4=1) \cdot P(H_5=1)  \notag \\
+&= .6^5 \notag
+\end{align}
+
+Less formally, the only way to achieve all heads is to flip the sequence $HHHHH$. Each head happens with probability $.6$ and the answer is $.6^5$.
+
+What about the probability of flipping exactly $4$ heads? The sequences that can lead to this outcome are:
+\begin{align} 
+THHHH \notag \\
+HTHHH  \notag \\
+HHTHH \notag \\
+HHHTH \notag \\
+HHHHT \notag
+\end{align}
+
+These sequences all represent distinct outcomes for $X$. Although some of the sequences are the same in some places, each represents a distinct outcome of $X$, disjoint from all other outcomes. So we can use the addition formula for the probability of disjoint events.
+\begin{align} 
+&P(X=4) = \notag \\
+&P((THHHH) \cup (HTHHH) \cup (HHTHH) \cup (HHHTH) \cup (HHHHT)) = \notag \\
+&P(THHHH) + P(HTHHH) + P(HHTHH) + P(HHHTH) + P(HHHHT)=  \notag \\
+&5 \cdot .6^4 \cdot .4 \notag
+\end{align}
+
+What about the probability of $3$ heads? There are many sequences of flips that result in this, like $HTHTH$. Each of these sequences will have probability $.6^3 \cdot .4^2$ because there are three heads and two tails. To find out how many sequences there are we must answer the question "How many ways are there to assign three of the five coins to be heads?" The answer to this question is:
+$${5 \choose 3} = \frac{5!}{3!2!} = 10$$
+There are ${5 \choose 3}$ ways to flip $3$ heads and each way has probability $.6^3 \cdot .4^2$, so the probability of three heads is ${5 \choose 3} \cdot .6^3 \cdot .4^2$.
+
+This technique works for the other calculations we have done. There are ${5 \choose 5} = \frac{5!}{5!0!}=1$ ways to flip $5$ heads and ${5 \choose 4} = \frac{5!}{4!1!}=5$ ways to flip $4$ heads.
+
+Let's generalize from our coin flipping. We had $5$ independent Bernoulli trials where each Bernoulli trial had a probability of success as $.6$. What if we had $n$ Bernoulli trials each with a probability of success of $p$. This is called the **binomial distribution** with parameters $n$ and $p$.
+
+***
+```{theorem, name="Binomial Distribution"}
+Let $X$ have the binomial distribution with parameters $n$ and $p$. We have:
+$$p(k) = P(X=k) = {n \choose k}p^k(1-p)^{n-k}$$
+```
+***
+
+Be sure that this makes perfect sense.
+
+### Mean and Variance of the Binomial Distribution
+In exercise \@ref(exr:bernoulli) the motivated student showed that if $X$ is Bernoulli with parameter $p$ then $E(X) = p$ and $V(X) = p(1-p)$. These formulas for the binomial distribution are very similar.
+
+***
+```{theorem, name="Binomial Distribution"}
+Let $X$ have the binomial distribution with parameters $n$ and $p$. We have:
+$$E(X) = np$$
+$$V(X) = np(1-p)$$
+```
+***
+
+#### Intuition
+Let $X$ be the number of heads from a single coin flip. Let $Y$ be the number of heads from $10$ coin flips.
+$$E(X)=p=.5$$
+$$E(Y)=np=10 \cdot .5$$
+
+We can express $Y$ as the sum of single coin flips so $Y = X_1 + ... + X_{10}$. I feel like I could have guessed that $E(Y)=E(X_1 + ... + X_{10})$
