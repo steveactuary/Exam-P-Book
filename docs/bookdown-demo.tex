@@ -80,7 +80,7 @@
 
 \title{An Exam P Study Guide}
 \author{Actuary Helper}
-\date{2020-01-09}
+\date{2020-01-12}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1072,10 +1072,222 @@ In exercise \ref{exr:bernoulli} the motivated student showed that if \(X\) is Be
 \subsubsection{Intuition}\label{intuition}}
 
 Let \(X\) be the number of heads from a single coin flip. Let \(Y\) be the number of heads from \(10\) coin flips.
-\[E(X)=p=.5\]
+\[E(X)=np=1 \cdot .5\]
 \[E(Y)=np=10 \cdot .5\]
 
-We can express \(Y\) as the sum of single coin flips so \(Y = X_1 + ... + X_{10}\). I feel like I could have guessed that \(E(Y)=E(X_1 + ... + X_{10})\)
+Think about how many heads you expect to get when you flip \(10\) coins. It seems like it should be \(10\) times the expected number of heads from \(1\) coin. Apparently the variance is also \(10\) times larger for \(10\) times the coins.
+
+\[V(X)=np(1-p)=1 \cdot .5^2\]
+\[V(Y)=np(1-p)=10 \cdot .5^2\]
+
+\hypertarget{hypergeometric-distribution}{%
+\section{Hypergeometric Distribution}\label{hypergeometric-distribution}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Hypergeometric Rocks]
+\protect\hypertarget{exm:unnamed-chunk-22}{}{\label{exm:unnamed-chunk-22} \iffalse (Hypergeometric Rocks) \fi{} }We have \(15\) rocks in a bag. \(7\) rocks are red and \(8\) are black. We select \(5\) rocks. What is the probability of selecting exactly \(2\) red rocks and \(3\) black rocks.
+
+Any selection of rocks is equally likely. We can use our formula for the probability when all events are equally likely.
+
+\[\frac{\text{Number of Selected Outcomes}}{\text{Total Possible Outcomes}}\]
+
+For the denominator we need to find how many ways there are to draw \(5\) rocks from a set of \(15\). This is \(15 \choose 5\).
+
+For the numerator we need to select \(2\) red rocks from a set of \(7\). This can be done in \(7 \choose 2\) ways. We can select \(3\) blue rocks from \(8\) in \(8 \choose 3\) ways. There are then \({7 \choose 2}{8 \choose 3}\) ways to select the rocks.
+
+The answer is then:
+\[\large \frac{{7 \choose 2}{8 \choose 3}}{{15 \choose 5}}\]
+\EndKnitrBlock{example}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{exercise}[Hypergeometric Cards]
+\protect\hypertarget{exr:unnamed-chunk-23}{}{\label{exr:unnamed-chunk-23} \iffalse (Hypergeometric Cards) \fi{} }We have a deck of \(40\) cards. \(30\) cards are red and \(10\) are black. We draw a hand of \(5\) cards. Show that the probability of drawing \(3\) black cards is:
+\[\large{\frac{{30 \choose 2}{10 \choose 3}}{{40 \choose 5}}}\]
+\EndKnitrBlock{exercise}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+I strongly recommend students know how to figure these things out without consulting any formula sheets. I think trying to memorize this formula would be far worse than using the basics to derive it. Here is the formula.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{definition}[Hypergeometric Distribution]
+\protect\hypertarget{def:unnamed-chunk-24}{}{\label{def:unnamed-chunk-24} \iffalse (Hypergeometric Distribution) \fi{} }We randomly select \(n\) items from a population of \(N\) items. Let \(r\) represent the number of items from the population classified as a success, and \(k\) be the number of items in the selection classified as successes. Let \(X\) be the random variable representing the number of items in our selection considered successes.
+
+\[P(X=k) = \large{\frac{{{N-r}\choose{n-k}}{{r}\choose{k}}}{{N \choose n}}}\]
+\EndKnitrBlock{definition}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Memorization Is Bad]
+\protect\hypertarget{exm:unnamed-chunk-25}{}{\label{exm:unnamed-chunk-25} \iffalse (Memorization Is Bad) \fi{} }We return to our example with \(15\) rocks in a bag. \(7\) rocks are red. We select \(5\) rocks. What is the probability of selecting exactly \(2\) red rocks. We abandon critical thought and use the formula.
+
+\[P(X=k) = \large{\frac{{{N-r}\choose{n-k}}{{r}\choose{k}}}{{N \choose n}}} \\
+= \large{\frac{{{15-7}\choose{5-2}}{{7}\choose{2}}}{{15 \choose 7}}}\]
+\EndKnitrBlock{example}
+
+I think trying to memorize this formula is a mistake. There are also formulas for the variance and mean that are not discussed here because there is not much understanding to be gained.
+
+\hypertarget{hypergeometric-vs.-binomial}{%
+\subsection{Hypergeometric vs.~Binomial}\label{hypergeometric-vs.-binomial}}
+
+The hypergeometric distribution is closely related to the binomial distribution. We have a group of \(600\) actuaries and \(400\) astronauts. We select \(4\) people randomly from the \(1000\) to win a prize, what is probability that \(3\) people are actuaries and \(1\) is an astronaut?
+\[\large \frac{{600 \choose 3}{400 \choose 1}}{{1000 \choose 4}} = 0.3459\]
+
+The hypergeometric distribution is different than the binomial distribution because it samples \textbf{without replacement}. Let's change the problem and allow someone to win a prize multiple times. \(4\) names are drawn from a hat. Each time a name is drawn a prize is given and the name is put back in the hat (this is sampling \textbf{with replacement}). Since \(600\) of the \(1000\) people are actuaries, any time we make a selection to win a prize there is a probability of \(.6\) that the person is an actuary. We select \(4\) people, so the distribution of prizes given to actuaries is binomial with parameters \(n = 4\), \(p = .6\). In this example the probability of \(3\) actuaries winning prizes and \(1\) astronaut winning a prize is:
+\[{4 \choose 3} \cdot .6^3 \cdot .4 = .3456\]
+
+The hypergeometric distribution (without replacement) gives \(.3459\) and the binomial distribution (with replacement) gives \(.3456\). In the hypergeometric distribution if an actuary's name is drawn from the hat, the name does not go back in the hat. The probability that the first name drawn is an actuary is \(.6\) just like our example with replacement. Once an actuary's name is drawn from the hat the probability of drawing another actuarial name is \(\frac{599}{999} \approx.6\). This is why our hypergeometric and binomial distributions are so similar in this problem. This approximation works best when the overall population is large enough so that selecting without replacement changes the probabilities very little from selecting with replacement.
+
+\hypertarget{poisson-distribution}{%
+\section{Poisson Distribution}\label{poisson-distribution}}
+
+A Poisson distribution is appropriate when we are counting the number of times something happens in an hour or some unit of time. How many texts do I get in an hour? How often does someone in the state of California say the word ``dude''. How often does a person in the city of Minneapolis trip and fall? How often does a car accident happen on interstate 35? These are things that happen at some frequency.
+
+If you ever see the phrase \textbf{``the average rate''} you should consider that the question might be related to the Poisson distribution.
+
+Often they give you the rate per hour and you need to convert it to the rate per \(2\) hours, or the daily rate, or the rate per minute.
+\(\lambda\)
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Poisson Scaling Rate]
+\protect\hypertarget{exm:unnamed-chunk-26}{}{\label{exm:unnamed-chunk-26} \iffalse (Poisson Scaling Rate) \fi{} }The average rate of people spilling their coffee in the office is \(2\) per hour. Generally this rate is called \(\lambda\), so \(\lambda = 2\). The rate of people spilling coffee per minute is \(\frac{\lambda}{60} = \frac{1}{30}\). The rate of people spilling their coffee every day is \(24 \lambda = 48\).
+\EndKnitrBlock{example}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In reality most of the coffee will be spilled in the morning so the time of day changes the rate of spilling. The Poisson model does not work this way though. In the Poisson model it is assumed that the rate is constant throughout the day. The Poisson model also assumes that one person spilling their coffee doesn't make another person spill their coffee, spills are .
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{theorem}[Poisson Distribution]
+\protect\hypertarget{thm:unnamed-chunk-27}{}{\label{thm:unnamed-chunk-27} \iffalse (Poisson Distribution) \fi{} }Let \(X\) have a Poisson distribution with parameter \(\lambda\). The probability of \(k\) occurences of something happening is:
+\[\large P(X=k) = \frac{e^{-\lambda}\lambda^k}{k!}\]
+\EndKnitrBlock{theorem}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{example}[Poisson Scaling Rate]
+\protect\hypertarget{exm:unnamed-chunk-28}{}{\label{exm:unnamed-chunk-28} \iffalse (Poisson Scaling Rate) \fi{} }Assume a Poisson model. The average rate of people spilling their coffee in the office throughout the work day is \(2.5\) spills per hour. What is the probability that \(2\) people spill their coffee between \(8\) A.M. and \(9\) A.M., and \(6\) people spill their coffee between \(11\) A.M. and \(1\) P.M.?
+
+Because the number of spills across time intervals is independent:
+\[P(\text{2 spills from 8-9 A.M. and 6 spills from 11 A.M.-1 P.M.}) = \\
+P(\text{2 spills from 8-9 A.M.}) \cdot P(\text{6 spills from 11 A.M.-1 P.M.})\]
+
+For the calculation from \(\text{8-9 A.M.}\) we use \(\lambda = 2.5\) since the time interval is \(1\) hour.
+\[\large P(\text{2 spills from 8-9}) =\frac{e^{-2.5}2.5^2}{2!}\]
+
+For the calculation from \(\text{11 A.M.- 1 P.M.}\) we use \(\lambda = \lambda_\text{1 hour} \cdot t = 2.5 \cdot 2 = 5\) since the time interval is \(2\) hours.
+\[\large P(\text{6 spills from 11 A.M.-1 P.M.}) =\frac{e^{-5}5^6}{6!}\]
+
+We multiply these quantities to get the answer:
+\[\large \frac{e^{-2.5}2.5^2}{2!} \cdot \frac{e^{-5}5^6}{6!} = .03751\]
+\EndKnitrBlock{example}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+This formula is sort of funny so we try to make some connections to things so it makes sense. People that payed attention in Calculus 2 will know that \(e^x = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} +... = \displaystyle\sum_{n=0}^{\infty} \frac{x^n}{n!}\).
+
+Let's veryify that the sum of all probabilities is \(1\) for a Poisson \(X\).
+
+\[\displaystyle\sum_{n=0}^{\infty} P(X=k) = \displaystyle\sum_{n=0}^{\infty}\frac{e^{-\lambda}\lambda^k}{k!} =  \\e^{-\lambda} \displaystyle\sum_{n=0}^{\infty} \frac{\lambda^k}{k!} = e^{-\lambda}e^\lambda=1\]
+Using the expansion for \(e^x\) it can be proven that:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{theorem}[Poisson Distribution]
+\protect\hypertarget{thm:unnamed-chunk-29}{}{\label{thm:unnamed-chunk-29} \iffalse (Poisson Distribution) \fi{} }Let \(X\) have a Poisson distribution with parameter \(\lambda\).
+\[E(X) = \lambda\]
+\[V(X) = \lambda\]
+
+Easy to remember right?
+\EndKnitrBlock{theorem}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{geometric-distribution}{%
+\section{Geometric Distribution}\label{geometric-distribution}}
+
+Let \(X\) be the number of tries it takes to land a backflip if I land \(10%
+\) of my backflips. This is an example of a geometric distribution. The geometric distribution is when you take independent bernoulli trials until the first success. Each backflip attempt is an independent bernoulli trial with the same probability of success (assuming I don't improve or get tired).
+
+The probability of success on my first attempt is \(.1\). The probability of success on my second attempt is \(.9 \cdot .1\), first you fail, then you succeed. The probability of success on my third attempt is \(.9 \cdot .9 \cdot .1\), first I fail twice, then I succeed. Do you see how this goes? There are failures until there is success. We call the probability of success \(p\) and the probability of failure is \(1-p\) but we often use \(q = 1-p\) to make our formulas shorter.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{definition}[Geometric Distribution]
+\protect\hypertarget{def:unnamed-chunk-30}{}{\label{def:unnamed-chunk-30} \iffalse (Geometric Distribution) \fi{} }We perform independent Bernoulli trials, each having a probability of success \(p\) and probability of failure \(q\). Let \(X\) represent the trial on which the first success occurs.
+
+\[P(X=k) = q^{k-1}p\]
+\EndKnitrBlock{definition}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{definition}[Geometric Distribution]
+\protect\hypertarget{def:unnamed-chunk-31}{}{\label{def:unnamed-chunk-31} \iffalse (Geometric Distribution) \fi{} }Let \(X\) be a geometric random variable with parameter p.
+
+\[E(X) = \frac{1}{p}\]
+\[V(X) = \frac{1-p}{p^2}\]
+\EndKnitrBlock{definition}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+There are multiple forms of the geometric distribition. So far we have been counting the attempt on which we succeed. Another way to do this is to count the number of failures before success.
+
+Suppose we land a backflip on our first attempt. \(X=1\) if \(X\) is the try on which we succeed. If we let \(Y\) be the number of failures until success, \(Y=0\). We see that there are two ways to do this.
+
+I personally prefer the formulation where we use the try on which we succeed. This is because if I land \(p=\frac{1}{10}\) of my backflips then the expected try on which I succeed is \(\frac{1}{p}=10\). This makes sense to me and it is pretty. If we use the other formulation where \(Y\) is the number of failures before success we can say that \(Y=X-1\) and
+\[E(Y) = E(X-1) = E(X)-1= \\ \frac{1}{p}-1 = \frac{1-p}{p}\]
+\(V(Y)\) is unchanged because \(V(Y) = V(X+b) = V(X)\).
+\[V(Y) = \frac{1-p}{p^2}\]
+
+\hypertarget{negative-binomial-distribution}{%
+\section{Negative Binomial Distribution}\label{negative-binomial-distribution}}
+
+The geometric distribution has a parameter \(p\) and the value of the random variable is the first successful attempt. The negative binomial distribution has two parameters, \(p\) and \(r\). The negative binomial distribution counts the attempt on which the \(rth\) success occurs.
+
+We flip an unfair coin with a probability of \(.6\) for heads and \(.4\) for tails. Let \(X\) be the trial on which we get the \(3rd\) head. We wish to know \(P(X=5)\). Let's first consider that the \(5th\) flip must be a head. Of the first \(4\) flips, \(2\) of them are heads. We get \(2\) heads in the first four flips with probability:
+\[{4 \choose 2}.6^2.4^2\]
+We need the fifth flip to be heads so we multiply this probability by \(.6\) to get our answer of:
+\[{4 \choose 2}.6^3.4^2\]
+In this case \(P(X=x) = {{x-1} \choose {r-1}}p^r(1-p)^{x-r}\).
+
+\hypertarget{other-more-common-formulation}{%
+\subsection{Other (more common) formulation}\label{other-more-common-formulation}}
+
+A more common way of representing this is to count the number of failures until the \(rth\) success.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{definition}[Negative Binomial Distribution]
+\protect\hypertarget{def:unnamed-chunk-32}{}{\label{def:unnamed-chunk-32} \iffalse (Negative Binomial Distribution) \fi{} }Let \(Y\) be the number of failures until the \(rth\) success. We calculate the p.d.f. of \(Y\).
+\[P(Y=y)={{r+y-1} \choose y}p^r(1-p)^y\]
+\EndKnitrBlock{definition}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+If \(X\) is the R.V. representing the attempt on which the \(rth\) success occurs and \(Y\) is the R.V. representing the number of failures before the \(rth\) success, then \(Y = X - r\) because \(\text{failures = attempts - successes}\). Regardless of if the question asks you to count failures or attempts, the prepared student should be able to deduce the probability using first principles.
+
+We give formulas for the expectation and variance for this formulation of the negative binomial distribution.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\BeginKnitrBlock{theorem}[Negative Binomial Distribution]
+\protect\hypertarget{thm:unnamed-chunk-33}{}{\label{thm:unnamed-chunk-33} \iffalse (Negative Binomial Distribution) \fi{} }Let \(Y\) be the number of failures until the \(rth\) success.
+\[E(Y) = \frac{r(1-p)}{p}\]
+\[V(Y) = \frac{r(1-p)}{p^2}\]
+\EndKnitrBlock{theorem}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \backmatter
   \bibliography{book.bib,packages.bib}

@@ -56,3 +56,9 @@
 \contentsline {section}{\numberline {6.2}Binomial Distribution}{39}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Mean and Variance of the Binomial Distribution}{41}{subsection.6.2.1}%
 \contentsline {subsubsection}{\numberline {6.2.1.1}Intuition}{41}{subsubsection.6.2.1.1}%
+\contentsline {section}{\numberline {6.3}Hypergeometric Distribution}{42}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Hypergeometric vs.\nobreakspace {}Binomial}{43}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}Poisson Distribution}{44}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Geometric Distribution}{46}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Negative Binomial Distribution}{47}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Other (more common) formulation}{48}{subsection.6.6.1}%
