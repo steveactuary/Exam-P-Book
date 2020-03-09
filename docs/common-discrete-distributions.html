@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Common Discrete Distributions | An Exam P Study Guide</title>
   <meta name="description" content="This is a study guide for exam P." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Common Discrete Distributions | An Exam P Study Guide" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Actuary Helper" />
 
 
-<meta name="date" content="2020-02-26" />
+<meta name="date" content="2020-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="functions-of-discrete-random-variables.html"/>
-
+<link rel="next" href="common-continuous-distributions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 
@@ -146,6 +147,9 @@
 <li class="chapter" data-level="6.6.1" data-path="common-discrete-distributions.html"><a href="common-discrete-distributions.html#other-more-common-formulation"><i class="fa fa-check"></i><b>6.6.1</b> Other (more common) formulation</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="common-continuous-distributions.html"><a href="common-continuous-distributions.html"><i class="fa fa-check"></i><b>7</b> Common Continuous Distributions</a><ul>
+<li class="chapter" data-level="7.1" data-path="common-continuous-distributions.html"><a href="common-continuous-distributions.html#bernoulli-distribution-1"><i class="fa fa-check"></i><b>7.1</b> Bernoulli Distribution</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -171,7 +175,7 @@
 <div id="bernoulli-distribution" class="section level2">
 <h2><span class="header-section-number">6.1</span> Bernoulli Distribution</h2>
 <p>The Bernoulli distribution is appropriate when there are two outcomes. Success happens with probability <span class="math inline">\(p\)</span> and failure happens with probability <span class="math inline">\(1-p\)</span>.
-<span class="math display" id="eq:bernoulli">\[\begin{equation*} 
+<span class="math display">\[\begin{equation*} 
     p(x) =
     \left\{
         \begin{array}{cc}
@@ -179,12 +183,11 @@
                 1-p &amp; \mathrm{for\ } x=0 \\
         \end{array} 
     \right.
-\tag{6.1}
 \end{equation*}\]</span></p>
 <hr />
 
 <div class="exercise">
-<span id="exr:bernoulli" class="exercise"><strong>Exercise 6.1  </strong></span>Let <span class="math inline">\(X\)</span> be a Bernoulli random variable. Show that <span class="math inline">\(E(X)=p\)</span> and that <span class="math inline">\(V(X)=p \cdot (1-p)\)</span>.
+<span id="exr:bernoulliexr" class="exercise"><strong>Exercise 6.1  </strong></span>Let <span class="math inline">\(X\)</span> be a Bernoulli random variable. Show that <span class="math inline">\(E(X)=p\)</span> and that <span class="math inline">\(V(X)=p \cdot (1-p)\)</span>.
 </div>
 
 <hr />
@@ -232,7 +235,7 @@ There are <span class="math inline">\({5 \choose 3}\)</span> ways to flip <span 
 <hr />
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 6.1  (Binomial Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have the binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>. We have:
+<span id="thm:unnamed-chunk-20" class="theorem"><strong>Theorem 6.1  (Binomial Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have the binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>. We have:
 <span class="math display">\[p(k) = P(X=k) = {n \choose k}p^k(1-p)^{n-k}\]</span>
 </div>
 
@@ -240,11 +243,11 @@ There are <span class="math inline">\({5 \choose 3}\)</span> ways to flip <span 
 <p>Be sure that this makes perfect sense.</p>
 <div id="mean-and-variance-of-the-binomial-distribution" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Mean and Variance of the Binomial Distribution</h3>
-<p>In exercise <a href="common-discrete-distributions.html#exr:bernoulli">6.1</a> the motivated student showed that if <span class="math inline">\(X\)</span> is Bernoulli with parameter <span class="math inline">\(p\)</span> then <span class="math inline">\(E(X) = p\)</span> and <span class="math inline">\(V(X) = p(1-p)\)</span>. These formulas for the binomial distribution are very similar.</p>
+<p>In exercise <a href="common-discrete-distributions.html#exr:bernoulliexr">6.1</a> the motivated student showed that if <span class="math inline">\(X\)</span> is Bernoulli with parameter <span class="math inline">\(p\)</span> then <span class="math inline">\(E(X) = p\)</span> and <span class="math inline">\(V(X) = p(1-p)\)</span>. These formulas for the binomial distribution are very similar.</p>
 <hr />
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 6.2  (Binomial Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have the binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>. We have:
+<span id="thm:unnamed-chunk-21" class="theorem"><strong>Theorem 6.2  (Binomial Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have the binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>. We have:
 <span class="math display">\[E(X) = np\]</span>
 <span class="math display">\[V(X) = np(1-p)\]</span>
 </div>
@@ -266,7 +269,7 @@ There are <span class="math inline">\({5 \choose 3}\)</span> ways to flip <span 
 <hr />
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-3" class="example"><strong>Example 6.1  (Hypergeometric Rocks)  </strong></span>We have <span class="math inline">\(15\)</span> rocks in a bag. <span class="math inline">\(7\)</span> rocks are red and <span class="math inline">\(8\)</span> are black. We select <span class="math inline">\(5\)</span> rocks. What is the probability of selecting exactly <span class="math inline">\(2\)</span> red rocks and <span class="math inline">\(3\)</span> black rocks.</p>
+<p><span id="exm:unnamed-chunk-22" class="example"><strong>Example 6.1  (Hypergeometric Rocks)  </strong></span>We have <span class="math inline">\(15\)</span> rocks in a bag. <span class="math inline">\(7\)</span> rocks are red and <span class="math inline">\(8\)</span> are black. We select <span class="math inline">\(5\)</span> rocks. What is the probability of selecting exactly <span class="math inline">\(2\)</span> red rocks and <span class="math inline">\(3\)</span> black rocks.</p>
 <p>Any selection of rocks is equally likely. We can use our formula for the probability when all events are equally likely.</p>
 <p><span class="math display">\[\frac{\text{Number of Selected Outcomes}}{\text{Total Possible Outcomes}}\]</span></p>
 <p>For the denominator we need to find how many ways there are to draw <span class="math inline">\(5\)</span> rocks from a set of <span class="math inline">\(15\)</span>. This is <span class="math inline">\(15 \choose 5\)</span>.</p>
@@ -279,7 +282,7 @@ The answer is then:
 <hr />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 6.2  (Hypergeometric Cards)  </strong></span>We have a deck of <span class="math inline">\(40\)</span> cards. <span class="math inline">\(30\)</span> cards are red and <span class="math inline">\(10\)</span> are black. We draw a hand of <span class="math inline">\(5\)</span> cards. Show that the probability of drawing <span class="math inline">\(3\)</span> black cards is:
+<span id="exr:unnamed-chunk-23" class="exercise"><strong>Exercise 6.2  (Hypergeometric Cards)  </strong></span>We have a deck of <span class="math inline">\(40\)</span> cards. <span class="math inline">\(30\)</span> cards are red and <span class="math inline">\(10\)</span> are black. We draw a hand of <span class="math inline">\(5\)</span> cards. Show that the probability of drawing <span class="math inline">\(3\)</span> black cards is:
 <span class="math display">\[\large{\frac{{30 \choose 2}{10 \choose 3}}{{40 \choose 5}}}\]</span>
 </div>
 
@@ -288,14 +291,14 @@ The answer is then:
 <hr />
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-5" class="definition"><strong>Definition 6.1  (Hypergeometric Distribution)  </strong></span>We randomly select <span class="math inline">\(n\)</span> items from a population of <span class="math inline">\(N\)</span> items. Let <span class="math inline">\(r\)</span> represent the number of items from the population classified as a success, and <span class="math inline">\(k\)</span> be the number of items in the selection classified as successes. Let <span class="math inline">\(X\)</span> be the random variable representing the number of items in our selection considered successes.</p>
+<p><span id="def:unnamed-chunk-24" class="definition"><strong>Definition 6.1  (Hypergeometric Distribution)  </strong></span>We randomly select <span class="math inline">\(n\)</span> items from a population of <span class="math inline">\(N\)</span> items. Let <span class="math inline">\(r\)</span> represent the number of items from the population classified as a success, and <span class="math inline">\(k\)</span> be the number of items in the selection classified as successes. Let <span class="math inline">\(X\)</span> be the random variable representing the number of items in our selection considered successes.</p>
 <span class="math display">\[P(X=k) = \large{\frac{{{N-r}\choose{n-k}}{{r}\choose{k}}}{{N \choose n}}}\]</span>
 </div>
 
 <hr />
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 6.2  (Memorization Is Bad)  </strong></span>We return to our example with <span class="math inline">\(15\)</span> rocks in a bag. <span class="math inline">\(7\)</span> rocks are red. We select <span class="math inline">\(5\)</span> rocks. What is the probability of selecting exactly <span class="math inline">\(2\)</span> red rocks. We abandon critical thought and use the formula.</p>
+<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 6.2  (Memorization Is Bad)  </strong></span>We return to our example with <span class="math inline">\(15\)</span> rocks in a bag. <span class="math inline">\(7\)</span> rocks are red. We select <span class="math inline">\(5\)</span> rocks. What is the probability of selecting exactly <span class="math inline">\(2\)</span> red rocks. We abandon critical thought and use the formula.</p>
 <span class="math display">\[P(X=k) = \large{\frac{{{N-r}\choose{n-k}}{{r}\choose{k}}}{{N \choose n}}} \\
 = \large{\frac{{{15-7}\choose{5-2}}{{7}\choose{2}}}{{15 \choose 7}}}\]</span>
 </div>
@@ -319,7 +322,7 @@ The answer is then:
 <hr />
 
 <div class="example">
-<span id="exm:unnamed-chunk-7" class="example"><strong>Example 6.3  (Poisson Scaling Rate)  </strong></span>The average rate of people spilling their coffee in the office is <span class="math inline">\(2\)</span> per hour. Generally this rate is called <span class="math inline">\(\lambda\)</span>, so <span class="math inline">\(\lambda = 2\)</span>. The rate of people spilling coffee per minute is <span class="math inline">\(\frac{\lambda}{60} = \frac{1}{30}\)</span>. The rate of people spilling their coffee every day is <span class="math inline">\(24 \lambda = 48\)</span>.
+<span id="exm:unnamed-chunk-26" class="example"><strong>Example 6.3  (Poisson Scaling Rate)  </strong></span>The average rate of people spilling their coffee in the office is <span class="math inline">\(2\)</span> per hour. Generally this rate is called <span class="math inline">\(\lambda\)</span>, so <span class="math inline">\(\lambda = 2\)</span>. The rate of people spilling coffee per minute is <span class="math inline">\(\frac{\lambda}{60} = \frac{1}{30}\)</span>. The rate of people spilling their coffee every day is <span class="math inline">\(24 \lambda = 48\)</span>.
 </div>
 
 <hr />
@@ -327,7 +330,7 @@ The answer is then:
 <hr />
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-8" class="theorem"><strong>Theorem 6.3  (Poisson Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. The probability of <span class="math inline">\(k\)</span> occurences of something happening is:
+<span id="thm:unnamed-chunk-27" class="theorem"><strong>Theorem 6.3  (Poisson Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>. The probability of <span class="math inline">\(k\)</span> occurences of something happening is:
 <span class="math display">\[\large P(X=k) = \frac{e^{-\lambda}\lambda^k}{k!}\]</span>
 </div>
 
@@ -335,7 +338,7 @@ The answer is then:
 <hr />
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-9" class="example"><strong>Example 6.4  (Poisson Scaling Rate)  </strong></span>Assume a Poisson model. The average rate of people spilling their coffee in the office throughout the work day is <span class="math inline">\(2.5\)</span> spills per hour. What is the probability that <span class="math inline">\(2\)</span> people spill their coffee between <span class="math inline">\(8\)</span> A.M. and <span class="math inline">\(9\)</span> A.M., and <span class="math inline">\(6\)</span> people spill their coffee between <span class="math inline">\(11\)</span> A.M. and <span class="math inline">\(1\)</span> P.M.?</p>
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Example 6.4  (Poisson Scaling Rate)  </strong></span>Assume a Poisson model. The average rate of people spilling their coffee in the office throughout the work day is <span class="math inline">\(2.5\)</span> spills per hour. What is the probability that <span class="math inline">\(2\)</span> people spill their coffee between <span class="math inline">\(8\)</span> A.M. and <span class="math inline">\(9\)</span> A.M., and <span class="math inline">\(6\)</span> people spill their coffee between <span class="math inline">\(11\)</span> A.M. and <span class="math inline">\(1\)</span> P.M.?</p>
 <p>Because the number of spills across time intervals is independent:
 <span class="math display">\[P(\text{2 spills from 8-9 A.M. and 6 spills from 11 A.M.-1 P.M.}) = \\
 P(\text{2 spills from 8-9 A.M.}) \cdot P(\text{6 spills from 11 A.M.-1 P.M.})\]</span></p>
@@ -355,7 +358,7 @@ Using the expansion for <span class="math inline">\(e^x\)</span> it can be prove
 <hr />
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-10" class="theorem"><strong>Theorem 6.4  (Poisson Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>.
+<p><span id="thm:unnamed-chunk-29" class="theorem"><strong>Theorem 6.4  (Poisson Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> have a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>.
 <span class="math display">\[E(X) = \lambda\]</span>
 <span class="math display">\[V(X) = \lambda\]</span></p>
 Easy to remember right?
@@ -370,7 +373,7 @@ Easy to remember right?
 <hr />
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-11" class="definition"><strong>Definition 6.2  (Geometric Distribution)  </strong></span>We perform independent Bernoulli trials, each having a probability of success <span class="math inline">\(p\)</span> and probability of failure <span class="math inline">\(q\)</span>. Let <span class="math inline">\(X\)</span> represent the trial on which the first success occurs.</p>
+<p><span id="def:unnamed-chunk-30" class="definition"><strong>Definition 6.2  (Geometric Distribution)  </strong></span>We perform independent Bernoulli trials, each having a probability of success <span class="math inline">\(p\)</span> and probability of failure <span class="math inline">\(q\)</span>. Let <span class="math inline">\(X\)</span> represent the trial on which the first success occurs.</p>
 <span class="math display">\[P(X=k) = q^{k-1}p\]</span>
 </div>
 
@@ -378,7 +381,7 @@ Easy to remember right?
 <hr />
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-12" class="definition"><strong>Definition 6.3  (Geometric Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> be a geometric random variable with parameter p.</p>
+<p><span id="def:unnamed-chunk-31" class="definition"><strong>Definition 6.3  (Geometric Distribution)  </strong></span>Let <span class="math inline">\(X\)</span> be a geometric random variable with parameter p.</p>
 <span class="math display">\[E(X) = \frac{1}{p}\]</span>
 <span class="math display">\[V(X) = \frac{1-p}{p^2}\]</span>
 </div>
@@ -405,7 +408,7 @@ In this case <span class="math inline">\(P(X=x) = {{x-1} \choose {r-1}}p^r(1-p)^
 <hr />
 
 <div class="definition">
-<span id="def:unnamed-chunk-13" class="definition"><strong>Definition 6.4  (Negative Binomial Distribution)  </strong></span>Let <span class="math inline">\(Y\)</span> be the number of failures until the <span class="math inline">\(rth\)</span> success. We calculate the p.d.f. of <span class="math inline">\(Y\)</span>.
+<span id="def:unnamed-chunk-32" class="definition"><strong>Definition 6.4  (Negative Binomial Distribution)  </strong></span>Let <span class="math inline">\(Y\)</span> be the number of failures until the <span class="math inline">\(rth\)</span> success. We calculate the p.d.f. of <span class="math inline">\(Y\)</span>.
 <span class="math display">\[P(Y=y)={{r+y-1} \choose y}p^r(1-p)^y\]</span>
 </div>
 
@@ -415,7 +418,7 @@ In this case <span class="math inline">\(P(X=x) = {{x-1} \choose {r-1}}p^r(1-p)^
 <hr />
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-14" class="theorem"><strong>Theorem 6.5  (Negative Binomial Distribution)  </strong></span>Let <span class="math inline">\(Y\)</span> be the number of failures until the <span class="math inline">\(rth\)</span> success.
+<span id="thm:unnamed-chunk-33" class="theorem"><strong>Theorem 6.5  (Negative Binomial Distribution)  </strong></span>Let <span class="math inline">\(Y\)</span> be the number of failures until the <span class="math inline">\(rth\)</span> success.
 <span class="math display">\[E(Y) = \frac{r(1-p)}{p}\]</span>
 <span class="math display">\[V(Y) = \frac{r(1-p)}{p^2}\]</span>
 </div>
@@ -430,8 +433,8 @@ In this case <span class="math inline">\(P(X=x) = {{x-1} \choose {r-1}}p^r(1-p)^
           </div>
         </div>
       </div>
-<a href="functions-of-discrete-random-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="functions-of-discrete-random-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-continuous-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -40,7 +40,10 @@ coinflips %>% filter(`Games Played` >= 100) %>%
 
 We can calculate the average payoff over the $10,000$ simulated games by adding up the payoffs and dividing by the number of games:
 
-```{r, results = "asis", echo = FALSE}
+```{r, results = "asis", echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
 outcomes <- data.frame(`Games Played` = "10000", Wins = "2501", Losses = "7499")
 outcomes %>% 
   kable(col.names = c("Games Played", "Wins", "Losses")) %>% 

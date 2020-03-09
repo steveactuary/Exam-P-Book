@@ -43,16 +43,16 @@ $$P(X(s)=1)=P(\{HT,TH\})=\frac{1}{2}$$
 
 Even though $X$ is a function we usually don't write it as such. Instead of saying $X(s)=1$ we usually just write $X=1$ and it is understood that $X$ is a function. In our previous example we could rewrite it as $P(X=1)=P(\{HT,TH\})=\frac{1}{2}$.
 
-### Probability Distribution Function Definition
+### Probability Mass Function Definition
 
-It is common to calculate the probability of a random variable being a value $x$, $P(X=x)$. It is so common that we call it a "probability distribution function" (abbreviated **PDF**) and give it special notation.
+It is common to calculate the probability of a random variable being a value $x$, $P(X=x)$. It is so common that we call it a "probability mass function" (abbreviated **PMF**) and give it special notation.
 
 ***
-```{definition, name="Probability Distribution Function"}
-The probability distribution calculates $P(X=x)$. There is a special way to write this, instead of using a capital $P$ we use a lowercase $p$ and say that:
+```{definition, name="Probability Mass Function"}
+The probability mass function calculates $P(X=x)$. There is a special way to write this, instead of using a capital $P$ we use a lowercase $p$ and say that:
 $$p(x)=P(X = x)$$
   
-Some properties of the probability distribution function are that the probability of an outcome is between 0 and 1, and that the sum of the probability of all possible outcomes is 1:
+Some properties of the probability mass function are that the probability of an outcome is between 0 and 1, and that the sum of the probability of all possible outcomes is 1:
 
 For $x \in S$
   
@@ -86,7 +86,7 @@ Now we can also calculate $P(X \leq 1) = p(0)+p(1) = .25+.5=.75$. Calculations o
 The cumulative distribution function calculates $P(X \leq x)$. There is a special way to write this:
 $$F(x)=P(X \leq x)$$
   
-We can calculate the cumulative distribution function by summing the probability density function:
+We can calculate the cumulative distribution function by summing the probability mass function:
 $$F(x_0) = \displaystyle\sum_{x \leq x_0} p(x)$$
 ```
 ***
@@ -126,7 +126,7 @@ So far we have only talked about flipping coins. When I flip a coin twice the on
 
 ![](Pictures/04-RV/discrete.PNG)
 
-Some random variables are **continuous**. This means that the outcomes are intervals instead of points. The length of a cat is continuous, the length could truly be any number. 
+Some random variables are **continuous**. This means that the outcomes are intervals instead of points. The height of a person is continuous, they could be 5.983732... feet tall. Any number is possible.
 
 ![](Pictures/04-RV/continuous.PNG)
 

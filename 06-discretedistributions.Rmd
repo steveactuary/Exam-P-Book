@@ -10,11 +10,10 @@ The Bernoulli distribution is appropriate when there are two outcomes. Success h
                 1-p & \mathrm{for\ } x=0 \\
         \end{array} 
     \right.
-(\#eq:bernoulli)
 \end{equation*}
 
 ***
-```{exercise, bernoulli}
+```{exercise, bernoulliexr}
 Let $X$ be a Bernoulli random variable. Show that $E(X)=p$ and that $V(X)=p \cdot (1-p)$. 
 ```
 ***
@@ -77,7 +76,7 @@ $$p(k) = P(X=k) = {n \choose k}p^k(1-p)^{n-k}$$
 Be sure that this makes perfect sense.
 
 ### Mean and Variance of the Binomial Distribution
-In exercise \@ref(exr:bernoulli) the motivated student showed that if $X$ is Bernoulli with parameter $p$ then $E(X) = p$ and $V(X) = p(1-p)$. These formulas for the binomial distribution are very similar.
+In exercise \@ref(exr:bernoulliexr) the motivated student showed that if $X$ is Bernoulli with parameter $p$ then $E(X) = p$ and $V(X) = p(1-p)$. These formulas for the binomial distribution are very similar.
 
 ***
 ```{theorem, name="Binomial Distribution"}
